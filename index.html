@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap">
+    <script src="script.js"></script>
+</head>
+<body class="mainbody">
+    <!-- ================================================HHEADER============================================= -->
+    <header>
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <span class="resume"><b><strong class="res">RES</strong>UME.</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#Home" onclick="showPage('home'); toggleNavbar();">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Skills" onclick="showPage('skills'); toggleNavbar();">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Education" onclick="showPage('education'); toggleNavbar();">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Courses" onclick="showPage('courses'); toggleNavbar();">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="showPage('projects'); toggleNavbar();">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Contact Me" onclick="showPage('contactMe'); toggleNavbar();">Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <br><br>
+    <!-- ===============================================================home============================== -->
+    <section class="section-1" id="home">
+        <h2 class="About">About &nbsp;<span class="me">Me</span></h2>
+        <h6 class="whos">-who I Am-</h6>
+        <div class="container-1 text-center">
+            <div class="row">
+                <div class="col-md-6 order-md-1">
+                    <div class="image-container">
+                        <img src="RAVI.jpeg" height="300px" width="65%"  class="my-image" alt="ravikumar">
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <div>
+                        <!-- <h2 class="Aboutme">About Me</h2> -->
+                        <h4 class="im">I'm Ravikumar and I'm a <span  id="words"></span></h4>
+                        <div class="aboutme">
+                            <p>ager to embark on an enriching journey within the dynamic realm of IT, I am actively seeking an entry level role that fosters a stimulating learning environment. Passionate about innovation and driven. My aim 
+                                is to contribute fresh perspectives and creative solutions to propel the company's growth trajectory. Aspiring 
+                                to excel as a software developer, I'm dedicated to making impactful contributions while continuously refining 
+                                my skills in a collaborative setting.</p>
+                        </div>
+                        <br><br><br>
+                        <div class="download">
+                            <a href="myresume.pdf" download> <button class="btn btn-primary">Download CV</button> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================SKILLS================================================= -->
+    <section class="education"  id="skills">
+        <div class="max-width">
+            <h2 class="title">SKILLS</h2>
+            <!-- <div class="container-3"> -->
+                <div class="accordion-container">
+                    <div class="accordion active">
+                        <div class="accordion-heading">
+                            <h6>JAVA</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>Proficient in Java fundamentals: Variables, Datatypes, Parameters, Arrays, Enum, Keywords,import,Packages,Type Casting,condition statements.</li>
+                            <li>Excellent understanding of static and non-static concepts.</li>
+                            <li>Experienced with Access Specifiers, Method Return Type, and Wrapper Class.</li>
+                            <li>Solid grasp of Classes, Objects, Methods, Constructors, and Exceptions.</li>
+                            <li>Strong knowledge of object-oriented principles (Polymorphism, Inheritance, Encapsulation, Abstraction).</li>
+                            <li>Understanding of Memory Allocation (Stack and Heap).</li>
+                            <li>Familiarity with DTO.</li>
+                            <li>Proficient in robust exception handling with try-catch blocks, including custom exceptions and checked exceptions.</li>
+                            <li>Skilled in Java collections framework (List, Set, Map).</li>
+                            <li>Knowledgeable in Java 8 features: lambda expressions, streams, functional interfaces.</li>
+                            <li>Experienced with Java 8's Date and Time API, default methods, and the Optional class.</li>
+                        </ul>
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>HTML-5</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                       <UL class="accordion-content">
+                        <LI> Proficient in basic HTML tags, including attributes, headings, paragraphs, styles &validation</LI>
+                       <LI> Well-versed in working with HTML elements such as forms, embedded content, tables, 
+                        manipulation techniques, grouping, creating HTML links for seamless navigation.</LI>
+                    </UL>
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>CSS3</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                            <ul class="accordion-content">
+                   <LI> Proficient in CSS selectors and styles to create visually appealing and responsive web designs.</LI>
+                      <LI> Well-versed in understanding and applying the CSS box model for layout & design consistency.</LI>    
+               <LI> Skilled in implementing animations to enhance user experience and engagement on web pages.
+                   </LI>
+                    </ul>
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>JavaScript</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                            <ul class="accordion-content">
+                         <LI> Good knowledge in basic JavaScript concepts including variables, data types, control structures, 
+                            and functions. Familiar with DOM manipulation and event handling
+                            </LI>
+                    </ul>
+                    </div>
+                    <BR></BR>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>MYSQL</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                            <ul class="accordion-content">
+                              <LI>  Proficient in performing CRUD operations on database tables.</LI>
+                               <LI> Strong understanding of Primary Keys and Foreign Keys.</LI>
+                               <LI>  Skilled in writing Sub-queries and Correlated Sub-queries.</LI>
+                               <LI>  Proficient in utilizing Joins for data retrieval and manipulation.</LI>
+                    </ul>
+                    </div>
+                    <BR></BR>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>JDBC</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                            <ul class="accordion-content">
+                   <LI>  Competent in using JDBC to establish connections to databases, 
+                    execute SQL queries, and retrieve and manipulate data programmatically.</LI>
+                      <LI> Error Handling and Transactions: Understanding of handling errors and implementing 
+                        transactions in JDBC applications for data consistency and integrity.</LI>    
+                    </ul>
+                    </div>
+                    <BR></BR>
+                </div>
+
+            <!-- </div> -->
+        </div>
+    </section>
+    <!--====================================== EDUCATION ==================================-->
+    <section class="education" id="education">
+        <div class="max-width">
+            <h2 class="title">EDUCATION</h2>
+            <div class="container-3">
+                <div class="accordion-container">
+                    <div class="accordion active">
+                        <div class="accordion-heading">
+                            <h6>BACHELOR OF TECHNOLOGY</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="education-info">
+                                <div class="left">
+                                    <p class="degree">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path
+                                                d="M12.292 2.06v-.001l11.25 4.75a.749.749 0 0 1 0 1.382L19 10.108V15a.75.75 0 0 1-.11.391h-.001a2.84 2.84 0 0 1-.392.482c-.249.256-.625.58-1.163.896-1.08.638-2.776 1.23-5.334 1.23-.673 0-1.286-.041-1.846-.113a.75.75 0 0 1 .192-1.487c.492.063 1.042.1 1.654.1 2.317 0 3.746-.533 4.572-1.021.31-.178.596-.397.849-.65l.079-.085V10.74l-5.208 2.2a.75.75 0 0 1-.584 0L5.75 10.424v3.17c.502.129.96.391 1.327.758.579.578.923 1.41.923 2.428v4.5a.761.761 0 0 1-.345.634 2.157 2.157 0 0 1-.21.117 3.923 3.923 0 0 1-.52.213A6.121 6.121 0 0 1 5 22.532a6.092 6.092 0 0 1-1.925-.288 4.065 4.065 0 0 1-.52-.213 1.816 1.816 0 0 1-.22-.124.757.757 0 0 1-.335-.624v-4.5c0-1.02.344-1.85.923-2.43a2.904 2.904 0 0 1 1.327-.757V9.793L.458 8.19a.75.75 0 0 1 0-1.38l11.25-4.75a.75.75 0 0 1 .584 0ZM12 11.436 21.322 7.5 12 3.564 2.678 7.5ZM5 15c-.377 0-.745.141-1.017.413-.265.265-.483.7-.483 1.368v4.022c.299.105.797.228 1.5.228s1.201-.123 1.5-.228V16.78c0-.669-.218-1.103-.483-1.368A1.433 1.433 0 0 0 5 15Z">
+                                            </path>
+                                        </svg>Mechanical Engineering</p>
+                                    <p class="institute">Sri m Visvesvaraya Institute of Technology,Bengaluru</p>
+                                </div>
+                                <div class="right">
+                                    <p class="duration">2020</p>
+                                    <p class="grade">CGPA=7.20</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>PUC</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="education-info">
+                                <div class="left">
+                                    <p class="degree"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path
+                                            d="M9.197 10a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-2.382 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Zm-1.581 4a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z">
+                                        </path>
+                                        <path
+                                            d="M4.125 0h15.75a4.11 4.11 0 0 1 2.92 1.205A4.11 4.11 0 0 1 24 4.125c0 1.384-.476 2.794-1.128 4.16-.652 1.365-1.515 2.757-2.352 4.104l-.008.013c-.849 1.368-1.669 2.691-2.28 3.97-.614 1.283-.982 2.45-.982 3.503a2.625 2.625 0 1 0 4.083-2.183.75.75 0 1 1 .834-1.247A4.126 4.126 0 0 1 19.875 24H4.5a4.125 4.125 0 0 1-4.125-4.125c0-2.234 1.258-4.656 2.59-6.902.348-.586.702-1.162 1.05-1.728.8-1.304 1.567-2.553 2.144-3.738H3.39c-.823 0-1.886-.193-2.567-1.035A3.647 3.647 0 0 1 0 4.125 4.125 4.125 0 0 1 4.125 0ZM15.75 19.875c0-1.38.476-2.786 1.128-4.15.649-1.358 1.509-2.743 2.343-4.086l.017-.028c.849-1.367 1.669-2.692 2.28-3.972.614-1.285.982-2.457.982-3.514A2.615 2.615 0 0 0 19.875 1.5a2.625 2.625 0 0 0-2.625 2.625c0 .865.421 1.509 1.167 2.009A.75.75 0 0 1 18 7.507H7.812c-.65 1.483-1.624 3.069-2.577 4.619-.334.544-.666 1.083-.98 1.612-1.355 2.287-2.38 4.371-2.38 6.137A2.625 2.625 0 0 0 4.5 22.5h12.193a4.108 4.108 0 0 1-.943-2.625ZM1.5 4.125c-.01.511.163 1.008.487 1.403.254.313.74.479 1.402.479h12.86a3.648 3.648 0 0 1-.499-1.882 4.11 4.11 0 0 1 .943-2.625H4.125A2.625 2.625 0 0 0 1.5 4.125Z">
+                                        </path>
+                                    </svg>Science</p>
+                                    <p class="institute">Prism PU College,Dharwad</p>
+                                </div>
+                                <div class="right">
+                                    <p class="duration">2016</p>
+                                    <p class="grade">percentage:82.80%</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>SSLC</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="education-info">
+                                <div class="left">
+                                    <p class="degree">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                            <path
+                                                d="M1.75 16A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 0 0 .25-.25V8.285a.25.25 0 0 0-.111-.208l-1.055-.703a.749.749 0 1 1 .832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0 1 14.25 16h-3.5a.766.766 0 0 1-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 0 1-.75-.75V14h-1v1.25a.75.75 0 0 1-.75.75Zm-.25-1.75c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM3.75 6h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 3.75A.75.75 0 0 1 3.75 3h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 3.75Zm4 3A.75.75 0 0 1 7.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 7 6.75ZM7.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 9.75A.75.75 0 0 1 3.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 9.75ZM7.75 9h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5Z">
+                                            </path>
+                                        </svg>
+                                    SSLC</p>
+                                    <p class="institute">J G EDN TRUST KAN MED HS ,UGAR BK</p>
+                                </div>
+                                <div class="right">
+                                    <p class="duration">2014</p>
+                                    <p class="grade">percentage:82.40%</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <br> </br>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </section>
+     <!-- =========================COURSES======================================================= -->
+     <section class="section-3" id="courses">
+        <h2 class="title">COURSES</h2>
+        <UL>
+            <li> Ongoing Courses: Java Enterprise application Development Course (Java, SQL, HTML, CSS,
+                JavaScript, Advanced Java, Frameworks) at X-workZ development center.</li>
+            <li> JAVA programming fundamentals by INFOSYS &nbsp;&nbsp;<a href="java.pdf" target="_blank">view
+                    certificate</a> </li>
+            <li> HTML5-Language By INFOSYS &nbsp;&nbsp;<a href="html.pdf" target="_blank">view certificate</a> </li>
+            <li> CSS3 By INFOSYS &nbsp;&nbsp;<a href="css3.pdf" target="_blank">view certificate</a></li>
+            <li> MySQL in Detail BY INFOSYS &nbsp;&nbsp;<a href="mysql.pdf" target="_blank">view certificate</a></li>
+        </UL>
+    </section>
+    <!-- ====================================PROJECTS============================= -->
+    <section class="section-5" id="projects">
+        <h2 class="title">PROJECTS</h2>
+        <ul>
+        <li>FINAL YEAR PROJECT
+            <ul>
+             <li>Modelling and fabrication of multi-purposeagricutural machine</li>
+        </ul> </li>
+        <li> GIHUB PAGE PROJECT:
+            <ul>
+            <li> created a personal portfolio website using html, css, and javascript</li>
+            <li> designed and implemented responsive layouts and interactive features to showcase 
+                skills and projects.</li>
+                <li>hosted the website on github pages for public access:
+                     github page <a href="https://ravikumarxworkz.github.io/" alt="github">ravikumarxworkz.github.io</a></li>
+                    <li> demonstrated proficiency in front-end web development technologies and version 
+                        control with git.</li>
+        </ul></li>
+    </ul>
+    </section>
+    <!-- =================contact me================================================-->
+    <section class="section-6 " id="contactMe">
+        <h2 class="title">CONTACT ME</h2>
+        <p>email: <a href="mailto:rkkumbar97@gmail.com">rkkumbar97@gmail.com</a></p>
+        <p>phone: <a href="tel:+918123157179">(+91)8123157179</a></p>
+        <p>Address: s/o Shankar kumbar ugar budruk,belagavi,karnatak-591316</p>
+    </section>
+    <button class="myBtn" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- ===================================footer===========================================================-->
+    <footer class="container-fluid mt-5">
+        <div class="row">
+            <!--=================== Left Column for CONTACT Details=================================== -->
+            <div class="col-md-6">
+                <div class="info">
+                    <br>
+                    <p>Contact me via email: <a href="mailto:rkkumbar97@gmail.com">rkkumbar97@gmail.com</a></p>
+                    <p>Reach me by phone: <a href="tel:+918123157179">(+91)8123179157</a></p>
+                    <h4 class="Follow">Follow me on</h4>
+                    <a href="https://github.com/ravikumarxworkz" target="_blank" rel="noopener noreferrer">
+                        <img src="github.png" width="30px" alt="GitHub">
+                    </a>&nbsp;
+                    <a href="https://www.linkedin.com/in/ravikumar-shankar-kumbar/" target="_blank" rel="noopener noreferrer">
+                        <img src="link.webp" width="30px" alt="LinkedIn">
+                    </a> &nbsp;
+                    <a href="https://www.instagram.com/ravik_s_kumbar/" target="_blank" rel="noopener noreferrer">
+                        <img src="instgramlogo.avif" width="30px"  alt="Instagram">
+                    </a>&nbsp;
+                    <a href="https://twitter.com/BONDRAVI20" target="_blank" rel="noopener noreferrer">
+                        <img src="tiwtter.png" width="30px" alt="Twitter">
+                    </a>
+                </div>
+            </div>
+            <!--================================== Right Column for Message Form======================================== -->
+            <div class="col-md-6">
+                <div class="container mt-2 container-md">
+                    <h2 class="title">Message Me</h2>
+                    <form method="post" action="https://script.google.com/macros/s/AKfycbw3C3x7wvRNLUx0ntDS28PmeExjqx7fJnQ7leA-NOVTIMW87j1NoAXYdZWYzG1GHaUUpw/exec" name="contact-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message"  name="Message" rows="2" placeholder="Message..."
+                                required></textarea>
+                        </div>
+                        <input type="submit" value="send message" id="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p class="copy">&copy; Copyright 2023, All Right Reserved</p>
+    </footer>
+    <!-- =====================================BOOTSTRAP================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- ========================EDUCATUION JAVA SCRIPT============================================================= -->
+    <script>
+        function activateAccordion(accordions) {
+            accordions.forEach(acco => {
+                acco.onclick = () => {
+                    const isActive = acco.classList.contains('active');
+                    if (!isActive) {
+                        accordions.forEach(subAcco => { subAcco.classList.remove('active') });
+                        acco.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        var teamsAccordions = document.querySelectorAll('.teams .accordion-container .accordion');
+        activateAccordion(teamsAccordions);
+
+        var serviceAccordions = document.querySelectorAll('.services .accordion-container .accordion');
+        activateAccordion(serviceAccordions);
+
+        var educationAccordions = document.querySelectorAll('.education .accordion-container .accordion');
+        activateAccordion(educationAccordions);
+    </script>
+
+    <script>
+        const words = ['Developer', 'Designer'];
+        function displayWords() {
+            let currentIndex = 0;
+
+            function updateWord() {
+                document.getElementById('words').innerText = words[currentIndex];
+                currentIndex = (currentIndex + 1) % words.length;
+            }
+            updateWord();
+
+            setInterval(updateWord, 1500);
+        }
+        displayWords();
+    </script>     
+</body>
+
+</html>
