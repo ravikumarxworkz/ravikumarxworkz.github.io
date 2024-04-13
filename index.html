@@ -74,7 +74,7 @@
                         </div>
                         <br><br><br>
                         <div class="download">
-                            <a href="myresume.pdf" download> <button class="btn btn-primary">Download CV</button> </a>
+                            <a href="RAVI RESUME.pdf" download> <button class="btn btn-primary">Download CV</button> </a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <li>Solid grasp of Classes, Objects, Methods, Constructors, and Exceptions.</li>
                             <li>Strong knowledge of object-oriented principles (Polymorphism, Inheritance, Encapsulation, Abstraction).</li>
                             <li>Understanding of Memory Allocation (Stack and Heap).</li>
-                            <li>Familiarity with DTO.</li>
+                            <li>Familiarity with DTO and ENTITY</li>
                             <li>Proficient in robust exception handling with try-catch blocks, including custom exceptions and checked exceptions.</li>
                             <li>Skilled in Java collections framework (List, Set, Map).</li>
                             <li>Knowledgeable in Java 8 features: lambda expressions, streams, functional interfaces.</li>
@@ -159,14 +159,32 @@
                     <BR></BR>
                     <div class="accordion">
                         <div class="accordion-heading">
-                            <h6>JDBC</h6>
+                            <h6>JDBC/JPA</h6>
                             <i class="fas fa-angle-down"></i>
                         </div>
                             <ul class="accordion-content">
                    <LI>  Competent in using JDBC to establish connections to databases, 
                     execute SQL queries, and retrieve and manipulate data programmatically.</LI>
                       <LI> Error Handling and Transactions: Understanding of handling errors and implementing 
-                        transactions in JDBC applications for data consistency and integrity.</LI>    
+                        transactions in JDBC applications for data consistency and integrity.</LI> 
+                           <LI> Skilled in Java Persistence API (JPA) for seamless integration of Java applications with relational databases.</LI>       
+                    </ul>
+                    </div>
+                    <BR></BR>
+                      <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>SPRING MVC</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                            <ul class="accordion-content">
+                   <LI> <sTrong>Database Configuration:</sTrong> This step involves setting up and configuring the database connections. It includes defining the database URL, username, password, and other necessary configurations in the application properties file or XML configuration file. .</LI>
+                      <LI><sTrong>Entity Modeling:</sTrong> Next, you define the entity classes that represent the data model of your application. These classes typically map to database tables and contain fields representing the table columns. Annotations such as @Entity, @Table, @Column, etc., are used to define the mapping between entities and database tables.</LI>
+                      <LI><sTrong>Repository Layer:</sTrong> After defining the entity classes, you create repository interfaces or classes responsible for handling database operations such as CRUD (Create, Read, Update, Delete) operations. These repositories interact with the database to perform data access operations.</LI>
+                      <LI><sTrong>Service Layer:</sTrong> The service layer contains the business logic of your application. It acts as an intermediary between the controller layer and the repository layer. Service classes implement business logic, transaction management, and orchestrate multiple repository operations to fulfill business requirements.</LI>
+                      <LI><sTrong>Controller Development:</sTrong> Controllers handle incoming HTTP requests from clients, process them, and return appropriate responses. In Spring MVC, controllers are typically annotated with @Controller or @RestController. They handle requests, invoke service methods to perform business logic, and return the response to the client.</LI>
+                      <LI><sTrong>Dependency Injection:</sTrong> Spring's dependency injection mechanism is used throughout the application to manage dependencies between various components. Dependencies such as repositories, services, and other beans are injected into controller classes using annotations like @Autowired.</LI>
+                      <LI><sTrong>Design Patterns:</sTrong> Throughout the development process, various design patterns such as MVC (Model-View-Controller), Singleton, Factory, and DAO (Data Access Object) are applied where applicable to improve code organization, maintainability, and scalability.</LI>
+                    
                     </ul>
                     </div>
                     <BR></BR>
@@ -276,24 +294,350 @@
         </UL>
     </section>
     <!-- ====================================PROJECTS============================= -->
-    <section class="section-5" id="projects">
-        <h2 class="title">PROJECTS</h2>
-        <ul>
-        <li>FINAL YEAR PROJECT
-            <ul>
-             <li>Modelling and fabrication of multi-purposeagricutural machine</li>
-        </ul> </li>
-        <li> GIHUB PAGE PROJECT:
-            <ul>
-            <li> created a personal portfolio website using html, css, and javascript</li>
-            <li> designed and implemented responsive layouts and interactive features to showcase 
-                skills and projects.</li>
-                <li>hosted the website on github pages for public access:
-                     github page <a href="https://ravikumarxworkz.github.io/" alt="github">ravikumarxworkz.github.io</a></li>
-                    <li> demonstrated proficiency in front-end web development technologies and version 
-                        control with git.</li>
-        </ul></li>
-    </ul>
+   <section class="education"  id="projects">
+        <div class="max-width">
+            <h2 class="title">PROJECTS</h2>
+                <div class="accordion-container">
+                    <div class="accordion active">
+                        <div class="accordion-heading">
+                            <h6>WomenSecurityApp</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>
+                                <h6>Description:</h6>
+                                <ul>
+                                    <li> This App is a comprehensive platform designed to address the safety and security concerns of women.
+                                        It offers a range of features including incident tracking, user registration, authentication, profile management, safety
+                                        tips, complaint registration,admin page and more</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h6>Home Page:</h6>
+                                <ul>
+                                    <li>Emergency Button: Allows users to make direct calls to the nearest police station in emergencies.</li>
+                                    <li>Latest Women's Incidents in India: Displays recent incidents involving women in India.</li>
+                                    <li>Navigation Bar: Includes options to navigate to the Sign Up, Sign In.</li>
+                                </ul>
+                            </li>
+                                <li>
+                                    <h6>Email Confirmation Authentication:</h6>
+                                    <ul>
+                                        <li>  Before users can register, the system verifies their email address by
+                                            sending an OTP (One-Time Password). Upon successful verification, users can proceed with the registration
+                                            process, which includes providing detailed information such as username, email, Aadhar card number, and
+                                            contact details. The registration process also involves real-time validation and confirmation emails.
+                                            </li>
+                                    </ul>
+                                </li>
+                            <li>
+                                <h6>Sign Up Page:</h6>
+                                <ul>
+                                    <li>Form Fields: Users can fill in details such as Full Name, Email Address, Contact Number, etc., to create an account.</li>
+                                    <li>Validation: Ensure all required fields are filled correctly, with format validation for email addresses and phone numbers.</li>
+                                    <li>AJAX Validation:
+                                        <ul>
+                                            <li>
+                                                Contact Number: Utilize AJAX to check if the provided contact number already exists in the database.
+                        
+                                            </li>
+                                            <li>
+                                                Aadhaar Card Number: Use AJAX to verify whether the entered Aadhaar card number is already registered.
+                                                
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Sign In Page:</h6>
+                                <ul>
+                                    <li>Registered users can securely sign in using their email and password. Forgot password
+                                        functionality is available with email verification and password reset.</li>
+                    
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Profile Page:</h6>
+                                <ul>
+                                    <li>Navigation Bar: Includes two buttons for safety and complaint reporting.</li>
+                                    <li>User Profile: Displayed on the right side, showing the user's email ID with a user logo.</li>
+                                    <li>User Options: When clicking on the user's profile, options are provided to  EditProfile,Change password , delete the user's account, along with the option to logout.</li>
+                            
+                                    <li>
+                                        <h6>Edit Profile Button: Allows the user to open the update page:</h6>
+                                        <ul>
+                                    
+                                            <li>Update Form: Allows the user to modify their personal information.</li>
+                                            <li>Save Changes Button: Enables the user to save the updated information.</li>
+                                            
+                                        </ul>
+                                        <li>
+                                            <h6>change password</h6>
+                                            <ul>
+                                                <li>Users can change their password by providing their old password along with a new password and confirming the new password.</li>
+                                                <li>Password Validation:
+                                                    <ul>
+                                                        <li>The new password must be different from the old password.</li>
+                                                        <li>The new password and confirmed password must match.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </li>
+                                    <li>Delete Account Button: Deletes the user's account. After deletion, the main index page will open.</li>
+                                    <li>Logout Button: Logs the user out from their profile and redirects them to the main page.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Safety Tips Page:</h6>
+                                <ul>
+                                    <li>Navigation Bar: Includes a Home button that redirects to the main profile page.</li>
+                                    <li>Options: Allow the user to navigate back to the main profile page or perform other actions.</li>
+                                    <li>Information: Provides guidance on protecting women in critical situations, including safety measures and precautions.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Complaint Reporting Page:</h6>
+                                <ul>
+                                    <li>Navigation Bar: Includes a Home button that redirects to the main profile page.</li>
+                                    <li>History: Users can view their complaint history, including previously reported incidents.</li>
+                                    <li>Options: Allow the user to navigate back to the main profile page or perform other actions.</li>
+                                    <li>Form Fields: Users can report incidents by providing details such as Type of Incident, Date and Time, Location, and Description.</li>
+                                    <li> Additionally, users are provided with the option to download a
+                                        PDF copy of their registered complaint for reference.</li>
+                                </ul>
+                            </li>
+                            <LI>
+                                <H6>Admin page</H6>
+                                <ul>
+                                    <li>The admin page offers comprehensive management functionalities for user details and complaint records, with authentication via email verification, OTP, and password.
+                                </li>
+                                    <li><strong>User Management:</strong> Admins can oversee and edit user details in a tabular format, enabling efficient updates as needed.</li>
+                                    <li><strong>Complaint History:</strong> Access a detailed list of all registered complaints, including incident details and timestamps.</li>
+                                    <li><strong>Complaint Status Editing:</strong> Modify complaint statuses to reflect the current resolution stage.</li>
+                                    <li><strong>Complaint Copy Download:</strong>Download PDF copies of registered complaints for reference or further action</li>
+                                </ul>
+                                
+                            
+                            </LI>
+                            <li>
+                                <h6>Technologies Used:</h6>
+                                <ul>
+                                    <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                                    <li><strong>Backend:</strong> Java ,Java Servlets ,JPA</li>
+                                    <li><strong>Database:</strong> MySQL</li>
+                                    <li><strong>Security:</strong> Passwords are encrypted using advanced techniques, with Spring Security employed for authentication
+                                        and authorization.
+                                        </li>
+                                    <li><strong>Email Integration:</strong>Java Mail sender techniques are utilized for email notifications and password reset
+                                        functionalities</li>
+                                    <li><strong>Documentation: </strong> Documented project functionalities and setup instructions for ease of understanding and
+                                        replication.
+                                        </li>
+                                        <li><strong>GitHub Project Link:</strong> <a href=" https://github.com/ravikumarxworkz/ProjectNuggets/tree/main/WomenSecurityApp" target="_blank">clcik here</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+        
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>Voter ID Application Project</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>
+                                <h6>Description:</h6>
+                                <ul>
+                                    <li>The Voter ID Application is a web application designed to streamline the process of applying for a voter ID card. It features a user-friendly interface with validation checks to ensure accurate data entry. The application allows users to input personal information, preview their details before submission, and download a PDF copy of their application.</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>Features:</h4>
+                                <ul>
+                                    <li>
+                                        <h6>Home Page:</h6>
+                                        <ul>
+                                            <li>Apply Voter ID Page</li>
+                                            <li>Form with fields for:
+                                                <ul>
+                                                    <li>Username</li>
+                                                    <li>Aadhar Card Number</li>
+                                                    <li>Birthdate</li>
+                                                    <li>Contact Number</li>
+                                                    <li>Alternative Contact Number</li>
+                                                    <li>Email</li>
+                                                    <li>Country Name</li>
+                                                    <li>State</li>
+                                                    <li>Present Place</li>
+                                                    <li>Permanent Place</li>
+                                                    <li>Pincode</li>
+                                                </ul>
+                                            </li>
+                                            <li>Front-end validation for all fields</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h6>Preview Page:</h6>
+                                        <ul>
+                                            <li>Displays all filled details for review before submission</li>
+                                            <li>Submit Button</li>
+                                            <li>Edit Button</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h6>Database Integration:</h6>
+                                        <ul>
+                                            <li>Validates Aadhar Card Number uniqueness</li>
+                                            <li>Saves data to the database upon submission</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h6>Error Page:</h6>
+                                        <ul>
+                                            <li>Displays an error message if Aadhar Card Number is already present in the database</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h6>Final Submission Page:</h6>
+                                        <ul>
+                                            <li>Displays the assigned Voter ID Number</li>
+                                            <li>Download PDF option</li>
+                                            <li>Back to Home Button</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Technologies Used:</h6>
+                                <ul>
+                                    <li>Frontend: HTML, CSS, JavaScript</li>
+                                    <li>Backend: [Insert backend technology here, e.g., Java Servlets, Node.js]</li>
+                                    <li>Database: [Insert database technology here, e.g., MySQL, PostgreSQL]</li>
+                                </ul>
+                            </li>
+                    
+                            <li>
+                                <h6>Upcoming Features:</h6>
+                                <ul>
+                                    <li>Enhanced Data Integrity with Phone Number Validation</li>
+                                    <li>Personalize Documents with Photo and Signature Integration in PDFs</li>
+                                    <li>Seamless Search Functionality Using Voter ID or Aadhaar Card</li>
+                                    <li><strong>GitHub Project Link:</strong> <a href="https://github.com/ravikumarxworkz/ProjectNuggets/tree/main/VoterIdApplication" target="_blank">clcik here</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>Simple Calculator</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>
+                                <h6>Description:</h6>
+                                <ul>
+                                    <li>This project is a simple calculator application implemented in [insert programming language or framework here]. It provides basic arithmetic operations such as addition, subtraction, multiplication, and division.</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h6>Features:</h6>
+                                <ul>
+                                    <li>Addition</li>
+                                    <li>Subtraction</li>
+                                    <li>Multiplication</li>
+                                    <li>Division</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Usage:</h6>
+                                <ul>
+                                    <li>Clone the repository to your local machine.</li>
+                                    <li>Open the project in your preferred IDE or text editor.</li>
+                                    <li>Run the application.</li>
+                                    <li>Input numbers and select the desired operation.</li>
+                                    <li>View the result.</li>
+                                    <li><strong>GitHub Project Link:</strong> <a href="https://github.com/ravikumarxworkz/ProjectNuggets/tree/main/Calculater" target="_blank">clcik here</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <br> </br>
+                    <div class="accordion">
+                        <div class="accordion-heading">
+                            <h6>Register-Login project:</h6>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>
+                                <h6>Description:</h6>
+                                <ul>
+                                    <li>Welcome to the Register-Login project. This project serves as a demonstration platform showcasing the functionality of a basic web application through four HTML pages: `index.html`, `loginpage.html`, `registerpage.html`, and `welcomepage.html`. These pages provide a glimpse into how a simple application operates, covering user registration, login, and profile viewing functionalities.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Files Included:</h6>
+                                <ul>
+                                    <li>`index.html`: The main page of the demo project.</li>
+                                    <li>`loginpage.html`: Page for user login.</li>
+                                    <li>`registerpage.html`: Page for user registration.</li>
+                                    <li>`welcomepage.html`: Welcome page displayed after successful login.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Project Features:</h6>
+                                <ul>
+                                    <li><strong>User Registration:</strong> Allows users to create accounts by providing necessary details such as username, email address, and password.</li>
+                                    <li><strong>User Login:</strong> Registered users can securely log in using their credentials (username and password) to access the application's features.</li>
+                                    <li><strong>Profile Viewing:</strong> Once logged in, users are greeted with a welcome page where they can view their profile or resume to learn more about themselves.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Getting Started:</h6>
+                                <ul>
+                                    <li>Clone this repository to your local machine.</li>
+                                    <li>Open any web browser.</li>
+                                    <li>Navigate to the project directory.</li>
+                                    <li>Open `index.html` to start exploring the demo.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Contributions:</h6>
+                                <ul>
+                                    <li>Contributions to this project are encouraged! If you have any suggestions, improvements, or feature requests, feel free to submit a pull request. Your input is highly valued and will contribute to the enhancement of this showcase.</li>
+                                </ul>
+                            </li>
+                        
+                            <li>
+                                <h6>Contact:</h6>
+                                <ul>
+                                    <li>For any questions or inquiries, please feel free to contact me via email at rkkumbar97@gmail.com. Your feedback is appreciated and helps in improving the project further.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <BR></BR>
+                </div>
+        </div>
     </section>
     <!-- =================contact me================================================-->
     <section class="section-6 " id="contactMe">
