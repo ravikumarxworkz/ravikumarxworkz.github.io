@@ -831,7 +831,7 @@
             <div class="col-md-6">
                 <div class="container mt-2 container-md">
                     <h2 class="title">Message Me</h2>
-                    <form method="post" action="https://script.google.com/macros/s/AKfycbym7-sn6Vh3Pbm1HyImFu2-l4xh-iFLxNkkrEBGQ6BRTRp_5kh9ax52oPNF47Gcle4MTg/exec" name="contact-form">
+                    <form method="post" action="https://script.google.com/macros/s/AKfycbxhalxTGmOdFJVVLElSo2uakkjixNhUKUbNOWb3OgYi8owA5Pa0bfTlQjF-gkJcmj1hYw/exec" name="contact-form">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
@@ -852,8 +852,7 @@
         <p class="copy">&copy; Copyright 2023, All Right Reserved</p>
     </footer>
      <!-- =====================================message succes and error================================================== -->
-     <div class="thank-you-message" id="thankYouMessage">Thank you for your message. We will contact you through email.</div>
-  <div class="error-message" id="errorMessage">An error occurred while submitting your message. Please try again.</div>
+ 
     <!-- =====================================BOOTSTRAP================================================== -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
@@ -897,33 +896,6 @@
         }
         displayWords();
     </script>  
-      <script>
-    function getQueryParams() {
-      const params = {};
-      window.location.search.substring(1).split('&').forEach(function(pair) {
-        const [key, value] = pair.split('=');
-        params[decodeURIComponent(key)] = decodeURIComponent(value || '');
-      });
-      return params;
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const queryParams = getQueryParams();
-      if (queryParams.status === 'success') {
-        const thankYouMessage = document.getElementById('thankYouMessage');
-        thankYouMessage.style.display = 'block';
-        setTimeout(function() {
-          thankYouMessage.style.display = 'none';
-        }, 2000);
-      } else if (queryParams.status === 'error') {
-        const errorMessage = document.getElementById('errorMessage');
-        errorMessage.style.display = 'block';
-        setTimeout(function() {
-          errorMessage.style.display = 'none';
-        }, 2000);
-      }
-    });
-  </script>
 </body>
 
 </html>
