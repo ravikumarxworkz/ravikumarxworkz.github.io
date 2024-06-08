@@ -298,10 +298,20 @@ footer {
     box-shadow: 0 0 20px rgba(14, 50, 212, 0.7);
 
 }
-    .thank-you-message {
+    .thank-you-message, .error-message {
       display: none;
       color: green;
       font-size: 1.5em;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: rgba(0, 128, 0, 0.1);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .error-message {
+      color: red;
+      background-color: rgba(255, 0, 0, 0.1);
     }
 /* ==========================top scroll button */
 #myBtn {
