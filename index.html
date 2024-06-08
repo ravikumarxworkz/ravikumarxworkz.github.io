@@ -851,6 +851,9 @@
         </div>
         <p class="copy">&copy; Copyright 2023, All Right Reserved</p>
     </footer>
+     <!-- =====================================message succes and error================================================== -->
+     <div class="thank-you-message" id="thankYouMessage">Thank you for your message. We will contact you through email.</div>
+  <div class="error-message" id="errorMessage">An error occurred while submitting your message. Please try again.</div>
     <!-- =====================================BOOTSTRAP================================================== -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
@@ -893,7 +896,34 @@
             setInterval(updateWord, 1500);
         }
         displayWords();
-    </script>     
+    </script>  
+      <script>
+    function getQueryParams() {
+      const params = {};
+      window.location.search.substring(1).split('&').forEach(function(pair) {
+        const [key, value] = pair.split('=');
+        params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+      });
+      return params;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const queryParams = getQueryParams();
+      if (queryParams.status === 'success') {
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        thankYouMessage.style.display = 'block';
+        setTimeout(function() {
+          thankYouMessage.style.display = 'none';
+        }, 2000);
+      } else if (queryParams.status === 'error') {
+        const errorMessage = document.getElementById('errorMessage');
+        errorMessage.style.display = 'block';
+        setTimeout(function() {
+          errorMessage.style.display = 'none';
+        }, 2000);
+      }
+    });
+  </script>
 </body>
 
 </html>
