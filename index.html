@@ -430,21 +430,24 @@
                     </div>
                     <div class="col-xl-6 offset-xl-2 col-md-6 col-12">
                         <h2 class="title">Message Me</h2>
-                        <form method="post" action="https://script.google.com/macros/s/AKfycbzG6fp5CjsMXwp3YTf2alblyE2xOOvJKG1kHZxIY77e/dev" name="contact-form">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                                </div>
+                        <form method="post" action="https://script.google.com/macros/s/AKfycbxeqNhp0JiTj2NGHRpizSh744Pn10DMaPShQdxyJ6DsINkP1xGUE39XLPnucUGIPM-7/exec" name="contact-form" onsubmit="return validateForm()">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" name="Message" rows="2" placeholder="Message..." required></textarea>
+                            <div class="form-group col-md-6">
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Send Message" id="submit">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="contactNumber" name="contactNumber" placeholder="Contact Number" required>
+                          </div>
+                          <div class="form-group">
+                            <textarea class="form-control" id="message" name="Message" rows="2" placeholder="Message..." required></textarea>
+                          </div>
+                          <input type="submit" class="btn btn-primary" value="Send Message" id="submit">
                         </form>
-                    </div>                    
+                      </div>                                         
                 </div>
             </div>
         </section>
@@ -1042,6 +1045,40 @@ window.onclick = function(event) {
     
 
     <!-- <script src="scripts.js"></script> -->
+    <script>
+        function validateForm() {
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const contactNumber = document.getElementById("contactNumber").value;
+          const message = document.getElementById("message").value;
+      
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const contactNumberPattern = /^\d{10}$/;
+      
+          if (name.trim() === "") {
+            alert("Name is required.");
+            return false;
+          }
+      
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+          }
+      
+          if (!contactNumberPattern.test(contactNumber)) {
+            alert("Please enter a valid 10-digit contact number.");
+            return false;
+          }
+      
+          if (message.trim() === "") {
+            alert("Message is required.");
+            return false;
+          }
+      
+          return true;
+        }
+      </script>
+      
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
