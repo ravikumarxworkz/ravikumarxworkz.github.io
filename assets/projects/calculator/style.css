@@ -1,0 +1,175 @@
+body {
+    background-color: #ecf0f3;
+}
+
+.calculator {
+    max-width: 500px;
+    min-height: 500px;
+    margin: 80px auto;
+    padding: 40px 30px 30px 30px;
+    background-color: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+
+.display {
+    width: 100%;
+    height: 100px;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px;
+}
+
+.display .display-answer-area {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+
+.history {
+    font-size: 14px;
+    color: #6B5B95;
+    margin-bottom: 5px;
+}
+
+.output {
+    font-size: 24px;
+    color: #FF6F61;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #F7CAC9;
+}
+
+.btn.function {
+    background-color: #92A8D1;
+    color: #fff;
+}
+
+.btn.number {
+    background-color: #fff;
+    color: #6B5B95;
+}
+
+.btn.operator {
+    background-color: #88B04B;
+    color: #fff;
+}
+
+.btn.equal {
+    background-color: #FF6F61;
+    color: #fff;
+}
+
+@media (max-width: 350px) {
+    .calculator {
+        width: 95%;
+    }
+}
+  /* Loading Circle Container */
+  .circle-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+/* Image in the center */
+.circle-loader img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* Circle around the image */
+.circle-loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #f6ff00;
+    border-right: 4px solid #d9ff00;
+    animation: drawCircle 3s linear forwards;
+}
+
+/* Glow effect on completion */
+.circle-loader.glow::before {
+    box-shadow: 0 0 15px 5px yellow;
+}
+
+/* Keyframes for drawing the circle */
+@keyframes drawCircle {
+    0% {
+        transform: rotate(0deg);
+        border-color: transparent;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-color: yellow;
+    }
+}
+
+/* Hide the main content initially */
+.main-content {
+    display: none;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+    /* Ensures padding doesn't break the layout */
+}
+
+/* Show the main content after loading */
+.show-content {
+    display: block;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .circle-loader {
+        width: 150px;
+        height: 150px;
+    }
+
+    .circle-loader img {
+        width: 100px;
+        height: 100px;
+    }
+}

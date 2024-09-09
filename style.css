@@ -1,3 +1,4 @@
+    
   /* skills css codes */
   .education {
     /* background: #f9f9f9; */
@@ -98,6 +99,7 @@
     display: flex;
     position: relative;
     text-align: left;
+    color: black;
 }
 
 .close-btn {
@@ -113,8 +115,9 @@
 
 .close-btn:hover,
 .close-btn:focus {
-    color: black;
+    color:yellow;
     text-decoration: none;
+
 }
 .portfolio-item {
     position: relative;
@@ -139,3 +142,66 @@
 color: black; 
  text-align: center;
 }
+/* Close button positioning (right side) */
+.btn-close {
+    color: #aaa;
+    float: right;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border-radius: 50%; 
+    border: none;
+    font-size: 1.25rem;
+}
+
+.btn-close:hover {
+    background-color: yellow; /* Darker red on hover */
+}
+
+/* Ensure modal content has relative positioning */
+.modal-content {
+    position: relative;
+}
+ a svg {
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent; 
+} 
+
+a:hover .bi-facebook {
+    border-radius: 50%;
+    background-color: #3b5998; /* Facebook Blue */
+    
+}
+
+a:hover .bi-twitter {
+  
+    border-radius: 95%;
+    background-color: #1DA1F2; /* Twitter Blue */
+    color: white; /* White icon on blue background */
+}
+
+a:hover .bi-linkedin {
+    border-radius: 95%;
+    background-color: #0077B5; /* LinkedIn Blue */
+    color: white; /* White icon on blue background */
+}
+
+a:hover .bi-instagram {
+    border-radius: 95%;
+    background-color: #E4405F; /* Instagram gradient color */
+    color: white; /* White icon on pink background */
+}
+
+a:hover .bi-github {
+    border-radius: 95%;
+    background-color: #333; /* GitHub dark color */
+    color: white; /* White icon on dark background */
+}
+
+

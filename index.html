@@ -1,500 +1,1008 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESUME</title>
-    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=115635&format=png&color=000000" type="image/x-icon">
+    <title>Ravikumar Shankar Kumbar | Web Developer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Ravikumar Shankar Kumbar, a skilled web developer proficient in Java, JavaScript, HTML, CSS, and more. View projects and technical skills including 5-6 IT projects, MySQL, and education details.">
+    <meta name="keywords"
+        content="resume, web developer, Java, JavaScript, HTML, CSS, projects, technical skills, 5 to 6 projects, MySQL, education,Vendor Management System ,E-Commerce Website,Calculator,Scientific Calculator,complaint management system,voice assistant,Women Security App,Ravikumar Shankar Kumbar">
+    <meta name="author" content="Ravikumar Shankar Kumbar">
+
+    <!-- Open Graph Meta Tags (used by Facebook, Instagram, LinkedIn, GitHub) -->
+    <meta property="og:title" content="Ravikumar Shankar Kumbar | Web Developer Portfolio">
+    <meta property="og:description"
+        content="Explore Ravikumar's portfolio showcasing web development skills, technical projects, and expertise in Java, JavaScript, MySQL, and more.">
+    <meta property="og:image" content="https://ravikumarxworkz.github.io/assets/images/portfolio-image.jpg">
+    <!-- Use a relevant image -->
+    <meta property="og:url" content="https://ravikumarxworkz.github.io/">
+    <meta property="og:type" content="website">
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/my website logo.webp" type="image/x-icon">
+
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;800;900&display=swap"
         rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/js/index.js"></script>
-  <link rel="stylesheet" href="./assets/css/index.css">
-  <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" crossorigin src="./assets/js/index.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        /* Navbar Brand Logo with Glow */
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px yellow;
+        }
+
+        /* Loading Circle Container */
+        .circle-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Image in the center */
+        .circle-loader img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        /* Circle around the image */
+        .circle-loader::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top: 4px solid #f6ff00;
+            border-right: 4px solid #d9ff00;
+            animation: drawCircle 3s linear forwards;
+        }
+
+        /* Glow effect on completion */
+        .circle-loader.glow::before {
+            box-shadow: 0 0 15px 5px yellow;
+        }
+
+        /* Keyframes for drawing the circle */
+        @keyframes drawCircle {
+            0% {
+                transform: rotate(0deg);
+                border-color: transparent;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                border-color: yellow;
+            }
+        }
+
+        /* Hide the main content initially */
+        .main-content {
+            display: none;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            color: white;
+            box-sizing: border-box;
+            /* Ensures padding doesn't break the layout */
+        }
+
+        /* Show the main content after loading */
+        .show-content {
+            display: block;
+        }
+
+
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .circle-loader {
+                width: 150px;
+                height: 150px;
+            }
+
+            .circle-loader img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Ensure all cards are of equal height */
+        #myprojects .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #myprojects .card-body {
+            flex: 1;
+        }
+
+        #myprojects .badge {
+            display: inline-block;
+            margin-right: 0.5em;
+            padding: 0.25em 0.5em;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+        }
+
+        /* Make badges responsive and wrap if necessary */
+        #myprojects .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        #myprojects h5.card-title {
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #myprojects h5.card-title {
+                font-size: 1.25rem;
+            }
+
+            #myprojects .badge-container {
+                justify-content: center;
+            }
+
+            #myprojects .card-body {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!--navbar-->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-opacity-75 sticky-md-top ">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="./assets/images/header-logo.svg" alt="header"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav ms-md-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#aboutme">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#myprojects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education-info">Education</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contactme">Contact</a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-    <!--navbar-->
-    <main data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example"
-        tabindex="0">
-        <!--Home Section Start-->
-        <section class="py-lg-18 py-md-10  py-8 bg-dark" id="home">
+    <!-- Pentagon Image with Animation -->
+    <div class="circle-loader" id="loader">
+        <img src="./assets/images/my website logo.webp" alt="Loading Icon"> <!-- Add your icon image here -->
+    </div>
+    <div class="main-content" id="main-page">
+        <!--navbar-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-opacity-75 sticky-sm-top">
             <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-xl-5 col-md-6  col-lg-6 col-12">
-                        <div class="mb-5 mb-md-0">
-                            <span class=" text-primary">Hello, Welcome</span>
-                            <h4 class="mt-4 mb-4 display-3 fw-semibold">I'm Ravikumar <span style="color: orange;">&</span><Span style="font-style: italic; font-weight: lighter;">I'm a </Span><span  id="words"></span></h4>
-                            <a href="#contactme" class="btn btn-primary">Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 offset-xl-2 col-md-5 offset-md-1 col-lg-5 offset-lg-1  col-12">
-                        <div class="position-relative">
-                            <img src="./assets/images/RAVI.jpeg" alt="about"
-                                class="img-fluid position-relative z-1 rounded-4 ms-lg-n5 ms-md-n3">
-                            <div class="position-absolute top-0 mt-1 ">
-                                <img src="./assets/images/square.svg" alt="square" class="img-fluid w-100 d-none d-lg-block d-md-block">
-                            </div>
-                        </div>
+                <a class="navbar-brand" href="ravikumarxworkz.github.io"><img src="./assets/images/my website logo.webp"
+                        alt="header"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutme">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#myprojects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education-info">Education</a>
+                        </li>
 
-                    </div>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactme">Contact</a>
+                        </li>
+                    </ul>
 
                 </div>
             </div>
-        </section>
-        <!--home section  End-->
-        <!--about me section Start-->
-        <section class="py-lg-18 py-md-10 py-8" id="aboutme">
-            <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-xl-5  col-md-6 col-lg-6 col-12">
-                        <div class="p-3 mb-5 mb-md-0">
+        </nav>
+        <!--navbar-->
+
+        <main data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example"
+            tabindex="0">
+            <!--Home Section Start-->
+            <section class="py-lg-18 py-md-10  py-8 bg-dark" id="home">
+                <div class="container">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-5 col-md-6  col-lg-6 col-12">
+                            <div class="mb-5 mb-md-0">
+                                <span class=" text-primary">Hello,my name is</span>
+                                <h4 class="mt-4 mb-4 display-3 fw-semibold"> Ravikumar <span
+                                        style="color: orange;">&</span><Span
+                                        style="font-style: italic; font-weight: lighter;">I'm a </Span><span
+                                        id="words"></span></h4>
+                                <a href="#contactme" class="btn btn-primary">Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 offset-xl-2 col-md-5 offset-md-1 col-lg-5 offset-lg-1  col-12">
                             <div class="position-relative">
-                                <img src="./assets/images/RAVI.jpeg" alt="about"
-                                    class="img-fluid position-relative z-1 rounded-4 ms-lg-5 ms-3 ms-md-4">
-                                <div class="position-absolute top-0 mt-1">
-                                    <img src="./assets/images/square.svg" alt="square" class="img-fluid ">
+                                <img src="./assets/images/my website logo.webp" alt="about"
+                                    class="img-fluid position-relative z-1 rounded-4 ms-lg-n5 ms-md-n3">
+                                <div class="position-absolute top-0 mt-1 ">
+                                    <img src="./assets/images/square.svg" alt="square"
+                                        class="img-fluid w-100 d-none d-lg-block d-md-block">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!--home section  End-->
+            <!--about me section Start-->
+            <section class="py-lg-18 py-md-10 py-8" id="aboutme">
+                <div class="container">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-5  col-md-6 col-lg-6 col-12">
+                            <div class="p-3 mb-5 mb-md-0">
+                                <div class="position-relative">
+                                    <img src="./assets/images/RAVI.jpeg" alt="about"
+                                        class="img-fluid position-relative z-1 rounded-4 ms-lg-5 ms-3 ms-md-4">
+                                    <div class="position-absolute top-0 mt-1">
+                                        <img src="./assets/images/square.svg" alt="square" class="img-fluid ">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 offset-xl-1  col-md-5 offset-md-1 col-lg-5 offset-lg-1 col-12">
-                        <div class="">
-                            <h2 class="mb-5">
-                                About <span class="text-primary">Me</span>
-                            </h2>
-                            <p>Motivated Java Full Stack Developer with comprehensive training in Java, Spring MVC, HTML, CSS,
-                                JavaScript, Maven, MySQL, Hibernate, and JDBC. Skilled in building scalable web applications, known for
-                                problem-solving abilities, collaborative mindset, and Issues. </p>
-                            <p class="mb-6">Committed to continuous learning, eager to
-                                contribute to innovative projects. Experienced in Collaborating effectively with teams, leveraging principles of
-                                Computer Science to optimize solutions, ensuring smooth Deployment, and enhancing Performance.</p>
-                                <a href="./assets/pdfs/Ravikumar_FSD.pdf" download> <button class="btn btn-primary">Download CV</button> </a>
+                        <div class="col-xl-6 offset-xl-1  col-md-5 offset-md-1 col-lg-5 offset-lg-1 col-12">
+                            <div class="">
+                                <h2 class="mb-5">
+                                    About <span class="text-primary">Me</span>
+                                </h2>
+                                <p>Motivated Java Full Stack Developer with comprehensive training in Java, Spring MVC,
+                                    HTML, CSS,
+                                    JavaScript, Maven, MySQL, Hibernate, and JDBC. Skilled in building scalable web
+                                    applications, known for
+                                    problem-solving abilities, collaborative mindset, and Issues. </p>
+                                <p class="mb-6">Committed to continuous learning, eager to
+                                    contribute to innovative projects. Experienced in Collaborating effectively with
+                                    teams, leveraging principles of
+                                    Computer Science to optimize solutions, ensuring smooth Deployment, and enhancing
+                                    Performance.</p>
+                                <a href="./assets/pdfs/Ravikumar_FSD.pdf" download> <button
+                                        class="btn btn-primary">Download CV</button> </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!--about me section End-->
-        <!--Skills section Start-->
-        <section class=" py-lg-18 py-md-10 py-8 bg-dark" id="skills">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 col-md-12  col-lg-6 col-12">
-                        <div class="mb-lg-8 mb-5">
-                            <h2 style="text-align: center;">Skills <span>&</span><span class="text-primary">Certificates</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="slider-container">
-                        <button class="nav-btn left-btn" onclick="slideLeft()">&#9664;</button>
-                        <div class="skills-wrapper">
-                            <div class="skills-container">
-                                <div class="skill-card" id="skill1">
-                                    <img src="https://img.icons8.com/?size=100&id=lTKW3iI3wIT0&format=png&color=000000" alt="Java" />
-                                    <h5 class="Skill-Name">JAVA</h5>
-                                    <button class="explore-btn" onclick="openModal('skill1')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+            </section>
+            <!--about me section End-->
+            <!--Skills section Start-->
+            <section class=" py-lg-18 py-md-10 py-8 bg-dark" id="skills">
+                <div class="container">
+                    <h2 style="text-align: center;">Skills <span>&</span><span class="text-primary">Certificates</span>
+                    </h2>
+                    <div class="row">
+                        <div class="slider-container">
+                            <button class="nav-btn left-btn" onclick="slideLeft()">&#9664;</button>
+                            <div class="skills-wrapper">
+                                <div class="skills-container">
+                                    <div class="skill-card" id="skill1">
+                                        <img src="https://img.icons8.com/?size=100&id=lTKW3iI3wIT0&format=png&color=000000"
+                                            alt="Java" />
                                         <h5 class="Skill-Name">JAVA</h5>
-                                        <ul>
-                                            <li>Excellent understanding of static and non-static concepts.</li>
-                                            <li>Experienced with Access Specifiers, Method Return Type, and Wrapper Class.</li>
-                                            <li>Solid grasp of Classes, Objects, Methods, Constructors, and Exceptions.</li>
-                                            <li>Strong knowledge of object-oriented principles (Polymorphism, Inheritance, Encapsulation, Abstraction).</li>
-                                            <li>Understanding of Memory Allocation (Stack and Heap).</li>
-                                            <li>Familiarity with DTO.</li>
-                                            <li>Proficient in robust exception handling with try-catch blocks, including custom exceptions and checked exceptions.</li>
-                                            <li>Skilled in Java collections framework (List, Set, Map).</li>
-                                            <li>Knowledgeable in Java 8 features: lambda expressions, streams, functional interfaces.</li>
-                                            <li>Experienced with Java 8's Date and Time API, default methods, and the Optional class.</li>
-                                            <li><Strong>certificate:</Strong><a href="./assets/pdfs/java.pdf">clcik here</a></li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill1')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">JAVA</h5>
+                                            <ul>
+                                                <li>Excellent understanding of static and non-static concepts.</li>
+                                                <li>Experienced with Access Specifiers, Method Return Type, and Wrapper
+                                                    Class.</li>
+                                                <li>Solid grasp of Classes, Objects, Methods, Constructors, and
+                                                    Exceptions.</li>
+                                                <li>Strong knowledge of object-oriented principles (Polymorphism,
+                                                    Inheritance, Encapsulation, Abstraction).</li>
+                                                <li>Understanding of Memory Allocation (Stack and Heap).</li>
+                                                <li>Familiarity with DTO.</li>
+                                                <li>Proficient in robust exception handling with try-catch blocks,
+                                                    including custom exceptions and checked exceptions.</li>
+                                                <li>Skilled in Java collections framework (List, Set, Map).</li>
+                                                <li>Knowledgeable in Java 8 features: lambda expressions, streams,
+                                                    functional interfaces.</li>
+                                                <li>Experienced with Java 8's Date and Time API, default methods, and
+                                                    the Optional class.</li>
+                                                <li><Strong>certificate:</Strong><a href="./assets/pdfs/java.pdf">clcik
+                                                        here</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill2">
-                                    <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="HTML5" />
-                                    <h5 class="Skill-Name">HTML5</h5>
-                                    <button class="explore-btn" onclick="openModal('skill2')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill2">
+                                        <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
+                                            alt="HTML5" />
                                         <h5 class="Skill-Name">HTML5</h5>
-                                        <ul>
-                                            <li>Proficient in basic HTML tags, including attributes, headings, paragraphs, styles & validation</li>
-                                            <li>Well-versed in working with HTML elements such as forms, embedded content, tables, manipulation techniques, grouping, creating HTML links for seamless navigation.</li>
-                                            <li><Strong>certificate:</Strong><a href="./assets/pdfs/html.pdf">clcik here</a></li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill2')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">HTML5</h5>
+                                            <ul>
+                                                <li>Proficient in basic HTML tags, including attributes, headings,
+                                                    paragraphs, styles & validation</li>
+                                                <li>Well-versed in working with HTML elements such as forms, embedded
+                                                    content, tables, manipulation techniques, grouping, creating HTML
+                                                    links for seamless navigation.</li>
+                                                <li><Strong>certificate:</Strong><a href="./assets/pdfs/html.pdf">clcik
+                                                        here</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill3">
-                                    <img src="https://img.icons8.com/?size=100&id=5cVdiiKKi0vX&format=png&color=000000" alt="CSS3" />
-                                    <h5 class="Skill-Name">CSS3</h5>
-                                    <button class="explore-btn" onclick="openModal('skill3')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill3">
+                                        <img src="https://img.icons8.com/?size=100&id=5cVdiiKKi0vX&format=png&color=000000"
+                                            alt="CSS3" />
                                         <h5 class="Skill-Name">CSS3</h5>
-                                        <ul>
-                                            <li>Proficient in CSS selectors and styles to create visually appealing and responsive web designs.</li>
-                                            <li>Well-versed in understanding and applying the CSS box model for layout & design consistency.</li>
-                                            <li>Skilled in implementing animations to enhance user experience and engagement on web pages.</li>
-                                            <li><Strong>certificate:</Strong><a href="./assets/pdfs/css3.pdf">clcik here</a></li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill3')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">CSS3</h5>
+                                            <ul>
+                                                <li>Proficient in CSS selectors and styles to create visually appealing
+                                                    and responsive web designs.</li>
+                                                <li>Well-versed in understanding and applying the CSS box model for
+                                                    layout & design consistency.</li>
+                                                <li>Skilled in implementing animations to enhance user experience and
+                                                    engagement on web pages.</li>
+                                                <li><Strong>certificate:</Strong><a href="./assets/pdfs/css3.pdf">clcik
+                                                        here</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill4">
-                                    <img src="https://img.icons8.com/?size=100&id=laVIsJnTtYoj&format=png&color=000000" alt="JavaScript" />
-                                    <h5 class="Skill-Name">JavaScript</h5>
-                                    <button class="explore-btn" onclick="openModal('skill4')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill4">
+                                        <img src="https://img.icons8.com/?size=100&id=laVIsJnTtYoj&format=png&color=000000"
+                                            alt="JavaScript" />
                                         <h5 class="Skill-Name">JavaScript</h5>
-                                        <ul>
-                                            <li>Good knowledge in basic JavaScript concepts including variables, data types, control structures, and functions. Familiar with DOM manipulation and event handling</li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill4')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">JavaScript</h5>
+                                            <ul>
+                                                <li>Good knowledge in basic JavaScript concepts including variables,
+                                                    data types, control structures, and functions. Familiar with DOM
+                                                    manipulation and event handling</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill5">
-                                    <img src="https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000" alt="MySQL" />
-                                    <h5 class="Skill-Name">MYSQL</h5>
-                                    <button class="explore-btn" onclick="openModal('skill5')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill5">
+                                        <img src="https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000"
+                                            alt="MySQL" />
                                         <h5 class="Skill-Name">MYSQL</h5>
-                                        <ul>
-                                            <LI>  Proficient in performing CRUD operations on database tables.</LI>
-                                            <LI> Strong understanding of Primary Keys and Foreign Keys.</LI>
-                                            <LI>  Skilled in writing Sub-queries and Correlated Sub-queries.</LI>
-                                            <LI>  Proficient in utilizing Joins for data retrieval and manipulation.</LI>
-                                            <li><Strong>certificate:</Strong><a href="./assets/pdfs/mysql.pdf">clcik here</a></li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill5')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">MYSQL</h5>
+                                            <ul>
+                                                <LI> Proficient in performing CRUD operations on database tables.</LI>
+                                                <LI> Strong understanding of Primary Keys and Foreign Keys.</LI>
+                                                <LI> Skilled in writing Sub-queries and Correlated Sub-queries.</LI>
+                                                <LI> Proficient in utilizing Joins for data retrieval and manipulation.
+                                                </LI>
+                                                <li><Strong>certificate:</Strong><a href="./assets/pdfs/mysql.pdf">clcik
+                                                        here</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill6">
-                                    <img src="https://www.vectorlogo.zone/logos/hibernate/hibernate-icon.svg" alt="Hibernate" />
-                                    <h5 class="Skill-Name">Hibernate</h5>
-                                    <button class="explore-btn" onclick="openModal('skill6')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill6">
+                                        <img src="https://www.vectorlogo.zone/logos/hibernate/hibernate-icon.svg"
+                                            alt="Hibernate" />
                                         <h5 class="Skill-Name">Hibernate</h5>
-                                        <ul>
-                                            <li>Implemented Hibernate for efficient object-relational mapping in Java applications, reducing database interaction complexities and enhancing performance..</li>
-                                            <li>Integrated Hibernate with MySQL, utilizing Hibernate annotations for defining entity relationships and database mappings.</li>
-                                            <li>Optimized Hibernate queries and employed caching strategies to improve application response time by 30%.</li>
-                                            <li>Ensured data integrity and consistency through effective transaction management and error handling practices within Hibernate.</li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill6')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">Hibernate</h5>
+                                            <ul>
+                                                <li>Implemented Hibernate for efficient object-relational mapping in
+                                                    Java applications, reducing database interaction complexities and
+                                                    enhancing performance..</li>
+                                                <li>Integrated Hibernate with MySQL, utilizing Hibernate annotations for
+                                                    defining entity relationships and database mappings.</li>
+                                                <li>Optimized Hibernate queries and employed caching strategies to
+                                                    improve application response time by 30%.</li>
+                                                <li>Ensured data integrity and consistency through effective transaction
+                                                    management and error handling practices within Hibernate.</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill7">
-                                    <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Hibernate" />
-                                    <h5 class="Skill-Name">Spring Frameworks</h5>
-                                    <button class="explore-btn" onclick="openModal('skill7')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill7">
+                                        <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg"
+                                            alt="Hibernate" />
                                         <h5 class="Skill-Name">Spring Frameworks</h5>
-                                        <ul>
-                                            <LI> <sTrong>Database Configuration:</sTrong> This step involves setting up and configuring the database connections. It includes defining the database URL, username, password, and other necessary configurations in the application properties file or XML configuration file. .</LI>
-                                            <LI><sTrong>Entity Modeling:</sTrong> Next, you define the entity classes that represent the data model of your application. These classes typically map to database tables and contain fields representing the table columns. Annotations such as @Entity, @Table, @Column, etc., are used to define the mapping between entities and database tables.</LI>
-                                            <LI><sTrong>Repository Layer:</sTrong> After defining the entity classes, you create repository interfaces or classes responsible for handling database operations such as CRUD (Create, Read, Update, Delete) operations. These repositories interact with the database to perform data access operations.</LI>
-                                            <LI><sTrong>Service Layer:</sTrong> The service layer contains the business logic of your application. It acts as an intermediary between the controller layer and the repository layer. Service classes implement business logic, transaction management, and orchestrate multiple repository operations to fulfill business requirements.</LI>
-                                            <LI><sTrong>Controller Development:</sTrong> Controllers handle incoming HTTP requests from clients, process them, and return appropriate responses. In Spring MVC, controllers are typically annotated with @Controller or @RestController. They handle requests, invoke service methods to perform business logic, and return the response to the client.</LI>
-                                            <LI><sTrong>Dependency Injection:</sTrong> Spring's dependency injection mechanism is used throughout the application to manage dependencies between various components. Dependencies such as repositories, services, and other beans are injected into controller classes using annotations like @Autowired.</LI>
-                                            <LI><sTrong>Design Patterns:</sTrong> Throughout the development process, various design patterns such as MVC (Model-View-Controller), Singleton, Factory, and DAO (Data Access Object) are applied where applicable to improve code organization, maintainability, and scalability.</LI>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill7')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">Spring Frameworks</h5>
+                                            <ul>
+                                                <LI> <sTrong>Database Configuration:</sTrong> This step involves setting
+                                                    up and configuring the database connections. It includes defining
+                                                    the database URL, username, password, and other necessary
+                                                    configurations in the application properties file or XML
+                                                    configuration file. .</LI>
+                                                <LI><sTrong>Entity Modeling:</sTrong> Next, you define the entity
+                                                    classes that represent the data model of your application. These
+                                                    classes typically map to database tables and contain fields
+                                                    representing the table columns. Annotations such as @Entity, @Table,
+                                                    @Column, etc., are used to define the mapping between entities and
+                                                    database tables.</LI>
+                                                <LI><sTrong>Repository Layer:</sTrong> After defining the entity
+                                                    classes, you create repository interfaces or classes responsible for
+                                                    handling database operations such as CRUD (Create, Read, Update,
+                                                    Delete) operations. These repositories interact with the database to
+                                                    perform data access operations.</LI>
+                                                <LI><sTrong>Service Layer:</sTrong> The service layer contains the
+                                                    business logic of your application. It acts as an intermediary
+                                                    between the controller layer and the repository layer. Service
+                                                    classes implement business logic, transaction management, and
+                                                    orchestrate multiple repository operations to fulfill business
+                                                    requirements.</LI>
+                                                <LI><sTrong>Controller Development:</sTrong> Controllers handle incoming
+                                                    HTTP requests from clients, process them, and return appropriate
+                                                    responses. In Spring MVC, controllers are typically annotated with
+                                                    @Controller or @RestController. They handle requests, invoke service
+                                                    methods to perform business logic, and return the response to the
+                                                    client.</LI>
+                                                <LI><sTrong>Dependency Injection:</sTrong> Spring's dependency injection
+                                                    mechanism is used throughout the application to manage dependencies
+                                                    between various components. Dependencies such as repositories,
+                                                    services, and other beans are injected into controller classes using
+                                                    annotations like @Autowired.</LI>
+                                                <LI><sTrong>Design Patterns:</sTrong> Throughout the development
+                                                    process, various design patterns such as MVC
+                                                    (Model-View-Controller), Singleton, Factory, and DAO (Data Access
+                                                    Object) are applied where applicable to improve code organization,
+                                                    maintainability, and scalability.</LI>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="skill-card" id="skill8">
-                                    <img src="https://img.icons8.com/?size=100&id=LoL4bFzqmAa0&format=png&color=000000" alt="GitHub" />
-                                    <h5 class="Skill-Name">GitHub</h5>
-                                    <button class="explore-btn" onclick="openModal('skill8')">Explore</button>
-                                    <div class="skill-content" style="display: none;">
+                                    <div class="skill-card" id="skill8">
+                                        <img src="https://img.icons8.com/?size=100&id=LoL4bFzqmAa0&format=png&color=000000"
+                                            alt="GitHub" />
                                         <h5 class="Skill-Name">GitHub</h5>
-                                        <ul>
-                                            <li>Proficient in Git for version control, managing Git repositories on GitHub, including branching, merging, and resolving conflicts to maintain project integrity and collaboration efficiency.</li>
-                                          <li>Implemented Git workflows such as Gitflow, ensuring systematic feature development, release management, and bug fixing processes.</li>
-                                          <li>Followed best practices for version control, including clear commit messages, atomic commits, and branch management strategies, enhancing repository organization and team productivity.</li>
-                                        </ul>
+                                        <button class="explore-btn" onclick="openModal('skill8')">Explore</button>
+                                        <div class="skill-content" style="display: none;">
+                                            <h5 class="Skill-Name">GitHub</h5>
+                                            <ul>
+                                                <li>Proficient in Git for version control, managing Git repositories on
+                                                    GitHub, including branching, merging, and resolving conflicts to
+                                                    maintain project integrity and collaboration efficiency.</li>
+                                                <li>Implemented Git workflows such as Gitflow, ensuring systematic
+                                                    feature development, release management, and bug fixing processes.
+                                                </li>
+                                                <li>Followed best practices for version control, including clear commit
+                                                    messages, atomic commits, and branch management strategies,
+                                                    enhancing repository organization and team productivity.</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <button class="nav-btn right-btn" onclick="slideRight()">&#9654;</button>
                         </div>
-                        <button class="nav-btn right-btn" onclick="slideRight()">&#9654;</button>
-                    </div>
-                    <div id="modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close-btn" onclick="closeModal()">&times;</span>
-                            <div id="modal-skill-content"></div>
-                        </div>
-                    </div>
-              
-        </section>
-        <!--skills section end-->
-        <!--project  section Start-->
-        <section class="py-lg-18 py-md-10 py-8" id="myprojects">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 offset-xl-3 col-md-12 col-lg-8 offset-lg-2 col-12">
-                        <div class="text-center mb-5 mb-lg-8">
-                            <h2 class="mb-4">My <span class="text-primary">Projects</span></h2>  
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-6 col-md-6 col-12">
-                        <div class="portfolio-item">
-                            <h6 class="projectName"> vendor Management system</h6>
-                            <a class="mb-4 d-block" href="#">
-                                <img src="./assets/images/vendorManagement.png" alt="portfolio" class="img-fluid w-100 rounded-3">
-                            </a>
-                           
-                            <button class="btn btn-primary projectexplore-btn" onclick="openProjectModal('project1')">Explore</button>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6 col-12">
-                        <div class="row">
-                            <div class="col-xl-6 col-md-6 col-12">
-                                <div class="portfolio-item">
-                                    <h6 class="projectName">Women Security App</h6>
-                                    <a class="mb-4 d-block" href="#">
-                                        <img src="./assets/images/womenSafety.jpg" alt="portfolio" class="img-fluid w-100 rounded-3">
-                                    </a>
-                            
-                                    <button class="btn btn-primary projectexplore-btn" onclick="openProjectModal('project2')">Explore</button>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-md-6 col-12">
-                                <div class="portfolio-item">
-                                    <h6 class="projectName"> VoterIdApplication</h6>
-                                    <a class="mb-4 d-block" href="#">
-                                        <img src="./assets/images/votet id home page.png" alt="portfolio" class="img-fluid w-100 rounded-3">
-                                    </a>
-                                    <button class="btn btn-primary projectexplore-btn" onclick="openProjectModal('project3')">Explore</button>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-md-6 col-12">
-                                <div class="portfolio-item">
-                                    <h6 class="projectName">Calculator</h6>
-                                    <a class="mb-4 d-block" href="#">
-                                        <img src="./assets/images/calculator.webp" alt="portfolio" class="img-fluid w-100 rounded-3">
-                                    </a>
-                                    <button class="btn btn-primary projectexplore-btn" onclick="openProjectModal('project4')">Explore</button>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-md-6 col-12">
-                                <div class="portfolio-item">
-                                    <h6 class="projectName">Sign&LoginPage</h6>
-                                    <a class="mb-4 d-block" href="#">
-                                        <img src="./assets/images/login.png" alt="portfolio" class="img-fluid w-100 rounded-3">
-                                    </a>
-                                    <button class="btn btn-primary projectexplore-btn" onclick="openProjectModal('project5')">Explore</button>
-                                </div>
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn" onclick="closeModal()">&times;</span>
+                                <div id="modal-skill-content"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Project section end -->
-        <!-- Project Modal Start -->
-        <div id="projectModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeProjectModal()">&times;</span>
-                <div id="modal-project-content" class="modal-body"></div>
-            </div>
-        </div>
-         <!-- Project Modal Start end -->
-        <!--education section Start-->
-        <section class="py-lg-18 py-md-10 py-8 bg-dark" id="education-info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-7 col-md-12  col-lg-8 col-12">
-                        <div class="mb-lg-8 mb-5">
-                            <h2 class="mb-4"> My <span class="text-primary">Education</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4 col-12">
-                        <div class="card mb-4 border-0">
-                            <div class="card-body p-5">
-                                <div class="mb-3">
-                                    <h5 class="mb-3">June-2016-2020</h5>
-                                    <h4 class="mb-2 text-primary">BACHELOR OF ENGINEERING</h4>
-                                    <span> <sTrong style="color: white;">Mechanical Engineering</sTrong></span>
-                                </div>
-                                <p class="mb-0">Sri M Visvesvaraya Institute Of Technology,Bengaluru <br>
-                                    CGPA=7.20
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4 col-12">
-                        <div class="card mb-4  border-0">
-                            <div class="card-body p-5">
-                                <div class="mb-3">
-                                    <h5 class="mb-3">June-2014 - 2016</h5>
-                                    <h4 class="mb-2 text-primary">P U C</h4>
-                                    <span style="color: white;font-weight: bolder;">Science</span>
-                                </div>
-                                <p class=" mb-0">Prism PU College,Dharwad <br>
-                                    Percentage=82.80%
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6  col-lg-4 col-12">
-                        <div class="card border-0 mb-4">
-                            <div class="card-body p-5">
-                                <div class="mb-3">
-                                    <h5 class="mb-3">June-2013 - 2014</h5>
-                                    <h4 class="mb-2 text-primary"> S S L C</h4>
-                                </div>
-                                <p class="mb-0">J G EDN TRUST KAN MED HS ,UGAR BK <br>
-                                    percentage=82.40%
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--education  section end-->
-        <!--contact section Start-->
-        <section class="py-lg-18 py-md-10 py-8" id="contactme">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 offset-xl-2 col-md-12 col-lg-8 offset-lg-2 col-12">
-                        <div class="text-center mb-5 mb-lg-8">
-                            <h2 class="mb-4">Contact <span class="text-primary">Me</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-12">
-                        <div>
-                            <div class="d-flex mb-3">
-                                <h5 class="">
-                                    <span class="fw-bold text-primary">Address:</span>
-                                </h5>
-                                <p class="ms-3 mb-0" style="color: white;" ><strong>S/O Shankar Kumbar Ugar Budruk,Belagavi,Karnatak-591316</strong></p>
 
-                            </div>
-                            <div class="d-flex mb-3">
-                                <h5 class="">
-                                    <span class="fw-bold text-primary">Phone:</span>
-                                </h5>
-                                <p class="mb-0 ms-3"><a style="color: white;" href="tel:+918123157179">(+91)8123157179</a></p>
+            </section>
+            <!--skills section end-->
+            <!--project  section Start-->
+            <section class="py-lg-18 py-md-10 py-8" id="myprojects">
+                <div class="container">
+                    <div class="row">
+                        <!-- <div class="col-xl-5 col-md-12  col-lg-12 col-12">
+                            <div class="mb-lg-8 mb-5"> -->
+                        <h2 style="text-align: center;">View Complete List of <span>&</span><span
+                                class="text-primary">Projects/Codes</span></h2>
+                        <!-- </div>
+                        </div> -->
+                    </div>
 
+                    <div class="row mt-5 d-flex">
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <i class="fas fa-folder-open fa-2x text-warning"></i>
+                                        <div class="d-flex align-items-center">
+                                            <!-- GitHub icon with link -->
+                                            <a href="https://github.com/yourprojectlink" target="_blank">
+                                                <i class="fab fa-github fa-lg text-warning"></i>
+                                            </a>
+                                            <!-- External button with logo -->
+                                            <a href="https://externalresource.com" target="_blank"
+                                                rel="noopener noreferrer" class="text-warning ml-2">
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-lg text-warning"></i>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-3">Complaint Management System</h5>
+                                    <p class="card-text"> I developed a robust and fully-featured Complaint Management
+                                        System
+                                        designed to streamline the process of complaint handling across four distinct
+                                        modules: User,
+                                        Admin, Department, and Employee. This system is built using Java, JSP, and
+                                        MySQL, offering a
+                                        seamless user experience and modular management.</p>
+                                    <!-- Responsive badge container -->
+                                    <div class="badge-container mt-3">
+                                        <span class="badge badge-pill  text-warning">java</span>
+                                        <span class="badge badge-pill  text-warning">springboot</span>
+                                        <span class="badge badge-pill  text-warning">html</span>
+                                        <span class="badge badge-pill  text-warning">css</span>
+                                        <span class="badge badge-pill  text-warning">javascript</span>
+                                        <span class="badge badge-pill  text-warning">mysql</span>
+                                        <span class="badge badge-pill  text-warning">maven</span>
+                                    </div>
+                                    <button class="btn btn-outline-warning mt-3" onclick="openProjectModal('project0')">Explore</button>
+                                </div>
                             </div>
-                            <div class="d-flex mb-3">
-                                <h5 class="">
-                                    <span class="fw-bold text-primary">E mail:</span>
-                                </h5>
-                                <p class="mb-0 ms-3"><a style="color: white;" href="mailto:rkkumbar97@gmail.com">rkkumbar97@gmail.com</a></p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <i class="fas fa-folder-open fa-2x text-warning"></i>
+                                        <div class="d-flex align-items-center">
+                                            <!-- GitHub icon with link -->
+                                            <a href="https://github.com/yourprojectlink" target="_blank">
+                                                <i class="fab fa-github fa-lg text-warning"></i>
+                                            </a>
+                                            <!-- External button with logo -->
+                                            <a href="https://externalresource.com" target="_blank"
+                                                rel="noopener noreferrer" class="text-warning ml-2">
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-lg text-warning"></i>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-3">Vendor Management System</h5>
+                                    <p class="card-text">
+                                        I developed a comprehensive Vendor Management System using Spring MVC, Java,
+                                        MySQL, and
+                                        modern front-end technologies. The system features secure user registration with
+                                        OTP
+                                        verification, real-time notifications, and robust authentication. It includes
+                                        end-to-end
+                                        management of orders, invoices, and payments, with an intuitive admin interface
+                                        for vendor
+                                        approval and product ordering. Automated reports and status updates further
+                                        enhance system
+                                        efficiency, showcasing full-stack development skills and performance
+                                        optimization</p>
+                                    <!-- Responsive badge container -->
+                                    <div class="badge-container mt-3">
+                                        <span class="badge badge-pill  text-warning">java</span>
+                                        <span class="badge badge-pill  text-warning">springboot</span>
+                                        <span class="badge badge-pill  text-warning">html</span>
+                                        <span class="badge badge-pill  text-warning">css</span>
+                                        <span class="badge badge-pill  text-warning">javascript</span>
+                                        <span class="badge badge-pill  text-warning">mysql</span>
+                                        <span class="badge badge-pill  text-warning">maven</span>
+                                    </div>
+                                    <button onclick="openProjectModal('project1')"
+                                        class="btn btn-outline-warning mt-3">Explore</button>
+                                </div>
                             </div>
-                            <div class="d-flex">
-                                <h5>
-                                    <span class="fw-bold text-primary">Website:</span>
-                                </h5>
-                                <p class="'mb-0 ms-3"><a style="color: white;" href="https://ravikumarxworkz.github.io/" target="_blank">ravikumar-shankar-kumbar.com </a></p>
+                        </div>
+                        <!-- Add similar card structures for other projects as necessary -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <i class="fas fa-folder-open fa-2x text-warning"></i>
+                                        <div class="d-flex align-items-center">
+                                            <!-- GitHub icon with link -->
+                                            <a href="https://github.com/yourprojectlink" target="_blank">
+                                                <i class="fab fa-github fa-lg text-warning"></i>
+                                            </a>
+                                            <!-- External button with logo -->
+                                            <a href="https://externalresource.com" target="_blank"
+                                                rel="noopener noreferrer" class="text-warning ml-2">
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-lg text-warning"></i>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-3">Voter Registration WebApp</h5>
+                                    <p class="card-text">The Voter ID Application is a web application designed to
+                                        streamline the
+                                        process of applying for a voter ID card. It features a user-friendly interface
+                                        with
+                                        validation checks to ensure accurate data entry. The application allows users to
+                                        input
+                                        personal information, preview their details before submission, and download a
+                                        PDF copy of
+                                        their application.</p>
+                                    <!-- Responsive badge container -->
+                                    <div class="badge-container mt-3">
+                                        <span class="badge badge-pill  text-warning">java</span>
+                                        <span class="badge badge-pill  text-warning">springboot</span>
+                                        <span class="badge badge-pill  text-warning">html</span>
+                                        <span class="badge badge-pill  text-warning">css</span>
+                                        <span class="badge badge-pill  text-warning">javascript</span>
+                                        <span class="badge badge-pill  text-warning">mysql</span>
+                                        <span class="badge badge-pill  text-warning">maven</span>
+                                    </div>
+                                    <button onclick="openProjectModal('project3')"
+                                        class="btn btn-outline-warning mt-3">Explore</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 offset-xl-2 col-md-6 col-12">
-                        <h2 class="title">Message Me</h2>
-                        <form method="post" action="https://script.google.com/macros/s/AKfycbxeqNhp0JiTj2NGHRpizSh744Pn10DMaPShQdxyJ6DsINkP1xGUE39XLPnucUGIPM-7/exec" name="contact-form" onsubmit="return validateForm()">
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                              <input type="text" class="form-control" id="name" name="Name" placeholder="Name" required>
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-4 d-flex">
+                            <div class="card bg-dark text-white flex-fill">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <i class="fas fa-folder-open fa-2x text-warning"></i>
+                                        <div class="d-flex align-items-center">
+                                            <!-- GitHub icon with link -->
+                                            <a href="https://github.com/yourprojectlink" target="_blank">
+                                                <i class="fab fa-github fa-lg text-warning"></i>
+                                            </a>
+                                            <!-- External button with logo -->
+                                            <a href="https://externalresource.com" target="_blank"
+                                                rel="noopener noreferrer" class="text-warning ml-2">
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-lg text-warning"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-3">Women Safety App</h5>
+                                    <p class="card-text"> This App is a comprehensive platform designed to address the
+                                        safety and
+                                        security concerns of women. It offers a range of features including incident
+                                        tracking, user
+                                        registration, authentication, profile management, safety tips, complaint
+                                        registration,admin
+                                        page and more</p>
+                                    <!-- Responsive badge container -->
+                                    <div class="badge-container mt-3">
+                                        <span class="badge badge-pill text-warning">java</span>
+                                        <span class="badge badge-pill text-warning">springboot</span>
+                                        <span class="badge badge-pill text-warning">html</span>
+                                        <span class="badge badge-pill text-warning">css</span>
+                                        <span class="badge badge-pill text-warning">javascript</span>
+                                        <span class="badge badge-pill text-warning">mysql</span>
+                                        <span class="badge badge-pill text-warning">maven</span>
+                                    </div>
+                                    <button onclick="openProjectModal('project2')"
+                                        class="btn btn-outline-warning mt-3">Explore</button>
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                              <input type="email" class="form-control" id="email" name="Email" placeholder="Email" required>
+                        </div>
+                        <div class="col-md-4 mb-4 d-flex">
+                            <div class="card bg-dark text-white flex-fill">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <i class="fas fa-folder-open fa-2x text-warning"></i>
+                                        <div class="d-flex align-items-center">
+                                            <!-- GitHub icon with link -->
+                                            <a href="https://github.com/ravikumarxworkz/ProjectNuggets/tree/main/Calculater"
+                                                target="_blank">
+                                                <i class="fab fa-github fa-lg text-warning"></i>
+                                            </a>
+                                            <!-- External button with logo -->
+                                            <a href="assets\projects\calculator\calculator.html" target="_blank"
+                                                rel="noopener noreferrer" class="text-warning ml-2">
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-lg text-warning"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-3">Calculator</h5>
+                                    <p class="card-text">
+                                        This project is a simple calculator application implemented in [insert
+                                        programming language
+                                        or framework here]. It provides basic arithmetic operations such as addition,
+                                        subtraction,
+                                        multiplication, and division.</p>
+                                    <!-- Responsive badge container -->
+                                    <div class="badge-container mt-3">
+                                        <span class="badge badge-pill text-warning">Java</span>
+                                        <span class="badge badge-pill text-warning">Html</span>
+                                        <span class="badge badge-pill text-warning">Css</span>
+                                        <span class="badge badge-pill text-warning">Cavascript</span>
+                                        <span class="badge badge-pill text-warning">Servlet</span>
+                                        <span class="badge badge-pill text-warning">SpringMvc</span>
+                                    </div>
+                                    <button onclick="openProjectModal('project4')"
+                                        class="btn btn-outline-warning mt-3">Explore</button>
+                                </div>
                             </div>
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="contactNumber" name="Contact Number" placeholder="Contact Number" required>
-                          </div>
-                          <div class="form-group">
-                            <textarea class="form-control" id="message" name="Message" rows="2" placeholder="Message..." required></textarea>
-                          </div>
-                          <input type="submit" class="btn btn-primary" value="Send Message" id="submit">
-                        </form>
-                      </div>                                         
+                        </div>
+                        <div class="col-md-4 mb-4 d-flex">
+                            <div class="card bg-dark text-white flex-fill">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <i class="fas fa-folder-open fa-2x text-warning"></i>
+                                        <div class="d-flex align-items-center">
+                                            <!-- GitHub icon with link -->
+                                            <a href="https://github.com/yourprojectlink" target="_blank">
+                                                <i class="fab fa-github fa-lg text-warning"></i>
+                                            </a>
+                                            <!-- External button with logo -->
+                                            <a href="https://externalresource.com" target="_blank"
+                                                rel="noopener noreferrer" class="text-warning ml-2">
+                                                <i
+                                                    class="fa-solid fa-arrow-up-right-from-square fa-lg text-warning"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-3">Register-Login WebApp</h5>
+                                    <p class="card-text ">Welcome to the Register-Login project. This project serves as
+                                        a
+                                        demonstration platform showcasing the functionality of a basic web application
+                                        through four
+                                        HTML pages:Index.html,Loginpage.html,Registerpage.html, and Welcomepage.html.
+                                        These pages
+                                        provide a glimpse into how a simple application operates, covering user
+                                        registration, login,
+                                        and profile viewing functionalities</p>
+                                    <!-- Responsive badge container -->
+                                    <div class="badge-container mt-3">
+                                        <span class="badge badge-pill text-warning">java</span>
+                                        <span class="badge badge-pill text-warning">springboot</span>
+                                        <span class="badge badge-pill text-warning">html</span>
+                                        <span class="badge badge-pill text-warning">css</span>
+                                        <span class="badge badge-pill text-warning">javascript</span>
+                                        <span class="badge badge-pill text-warning">mysql</span>
+
+                                    </div>
+                                    <button onclick="openProjectModal('project5')"
+                                        class="btn btn-outline-warning mt-3">Explore</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal"
+                        onclick="closeProjectModal()" aria-label="Close"></button>
+
+                    <div id="modal-project-content" class="modal-body"></div>
                 </div>
             </div>
-        </section>
-        <!--contact section end-->
-    </main>
-    <!--footer Start-->
-    <footer class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 offset-xl-3 col-md-12 col-12">
-                    <div class="text-center">
-                        <div class="mb-6">
-                            <h4 class="Follow">Follow me on</h4>
+            <section class="py-lg-18 py-md-10 py-8 bg-dark" id="education-info">
+                <div class="container">
+                    <h2 class="text-center mb-4"> My <span class="text-primary">Education</span></h2>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-lg-4 col-12">
+                            <div class="card mb-4 border-0">
+                                <div class="card-body p-5">
+                                    <div class="mb-3">
+                                        <h5 class="mb-3">June-2016-2020</h5>
+                                        <h4 class="mb-2 text-primary">BACHELOR OF ENGINEERING</h4>
+                                        <span> <sTrong style="color: white;">Mechanical Engineering</sTrong></span>
+                                    </div>
+                                    <p class="mb-0">Sri M Visvesvaraya Institute Of Technology,Bengaluru <br>
+                                        CGPA=7.20
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-        
-                        <a href="Jhttps://www.facebook.com/ravikumar.7562" target="_blank" rel="noopener noreferrer" class="me-3 link-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" fill=" var(--bs-primary)" class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                            </svg></a>
-                            <a href="https://twitter.com/BONDRAVI20" target="_blank" rel="noopener noreferrer" class="me-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill=" var(--bs-primary)" class="bi bi-twitter" viewBox="0 0 16 16">
-                                <path
-                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                            </svg></a>
-                            <a href="https://www.linkedin.com/in/ravikumar-shankar-kumbar/" target="_blank" rel="noopener noreferrer" class="me-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill=" var(--bs-primary)" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                            </svg></a>
-                            <a href="https://www.instagram.com/ravik_s_kumbar/" target="_blank" rel="noopener noreferrer" class="me-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill=" var(--bs-primary)" class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                            </svg></a>
+                        <div class="col-xl-4 col-md-6 col-lg-4 col-12">
+                            <div class="card mb-4  border-0">
+                                <div class="card-body p-5">
+                                    <div class="mb-3">
+                                        <h5 class="mb-3">June-2014 - 2016</h5>
+                                        <h4 class="mb-2 text-primary">P U C</h4>
+                                        <span style="color: white;font-weight: bolder;">Science</span>
+                                    </div>
+                                    <p class=" mb-0">Prism PU College,Dharwad <br>
+                                        Percentage=82.80%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6  col-lg-4 col-12">
+                            <div class="card border-0 mb-4">
+                                <div class="card-body p-5">
+                                    <div class="mb-3">
+                                        <h5 class="mb-3">June-2013 - 2014</h5>
+                                        <h4 class="mb-2 text-primary"> S S L C</h4>
+                                    </div>
+                                    <p class="mb-0">J G EDN TRUST KAN MED HS ,UGAR BK <br>
+                                        percentage=82.40%
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--education  section end-->
+            <!--contact section Start-->
+            <section class="py-lg-18 py-md-10 py-8" id="contactme">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-md-12 col-lg-8 offset-lg-2 col-12">
+                            <div class="text-center mb-5 mb-lg-8">
+                                <h2 class="mb-4">Contact <span class="text-primary">Me</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div>
+                                <div class="d-flex mb-3">
+                                    <h5 class="">
+                                        <span class="fw-bold text-primary">Address:</span>
+                                    </h5>
+                                    <p class="ms-3 mb-0" style="color: white;"><strong>S/O Shankar Kumbar Ugar
+                                            Budruk,Belagavi,Karnatak-591316</strong></p>
+
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <h5 class="">
+                                        <span class="fw-bold text-primary">Phone:</span>
+                                    </h5>
+                                    <p class="mb-0 ms-3"><a style="color: white;"
+                                            href="tel:+918123157179">(+91)8123157179</a></p>
+
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <h5 class="">
+                                        <span class="fw-bold text-primary">E mail:</span>
+                                    </h5>
+                                    <p class="mb-0 ms-3"><a style="color: white;"
+                                            href="mailto:rkkumbar97@gmail.com">rkkumbar97@gmail.com</a></p>
+                                </div>
+                                <div class="d-flex">
+                                    <h5>
+                                        <span class="fw-bold text-primary">Website:</span>
+                                    </h5>
+                                    <p class="'mb-0 ms-3"><a style="color: white;"
+                                            href="https://ravikumarxworkz.github.io/"
+                                            target="_blank">ravikumar-shankar-kumbar.com </a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 offset-xl-2 col-md-6 col-12">
+                            <h2 class="title">Message Me</h2>
+                            <form method="post"
+                                action="https://script.google.com/macros/s/AKfycbxeqNhp0JiTj2NGHRpizSh744Pn10DMaPShQdxyJ6DsINkP1xGUE39XLPnucUGIPM-7/exec"
+                                name="contact-form" onsubmit="return validateForm()">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" id="name" name="Name" placeholder="Name"
+                                            required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="email" class="form-control" id="email" name="Email"
+                                            placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contactNumber" name="Contact Number"
+                                        placeholder="Contact Number" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message" name="Message" rows="2"
+                                        placeholder="Message..." required></textarea>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Send Message" id="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--contact section end-->
+        </main>
+        <!--footer Start-->
+        <footer class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 offset-xl-3 col-md-12 col-12">
+                        <div class="text-center">
+                            <div class="mb-6">
+                                <h4 class="Follow">Follow me on</h4>
+                            </div>
+
+                            <a href="Jhttps://www.facebook.com/ravikumar.7562" target="_blank" rel="noopener noreferrer"
+                                class="me-3 link-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    fill=" var(--bs-primary)" class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg></a>
+                            <a href="https://twitter.com/BONDRAVI20" target="_blank" rel="noopener noreferrer"
+                                class="me-3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    fill=" var(--bs-primary)" class="bi bi-twitter" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                </svg></a>
+                            <a href="https://www.linkedin.com/in/ravikumar-kumbar/" target="_blank"
+                                rel="noopener noreferrer" class="me-3"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill=" var(--bs-primary)" class="bi bi-linkedin"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg></a>
+                            <a href="https://www.instagram.com/ravik_s_kumbar/" target="_blank"
+                                rel="noopener noreferrer" class="me-3"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill=" var(--bs-primary)" class="bi bi-instagram"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                </svg></a>
                             <a href="https://github.com/ravikumarxworkz" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--bs-primary)" class="bi bi-github" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.45.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--bs-primary)"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.45.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z" />
                                 </svg>
                             </a>
-                            
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <p style="text-align: center;" class="copy">&copy; Copyright 2023, All Right Reserved</p>
-    </footer>
+            <div class="text-center">
+                <p class="copy mt-2">&copy; Copyright 2023, All Right Reserved</p>
+                <p>Made with ❤️ by <a class="link-warning" href="https://ravikumarxworkz.github.io/"
+                        target="_blank">Ravikumar S Kumbar</a></p>
+            </div>
+        </footer>
+    </div>
+    <!-- JavaScript to trigger content display after animation -->
+    <script>
+        // Function to add glow effect and hide loader to show main content
+        window.addEventListener('load', () => {
+            // Simulate a loading time of 6 seconds (matches the CSS animation)
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.classList.add('glow'); // Add glow effect
+
+                // After glow effect, show main content
+                setTimeout(() => {
+                    loader.style.display = 'none'; // Hide the loader
+                    document.getElementById('main-page').classList.add('show-content'); // Show the main content
+                }, 1000); // Wait 1 second for the glow effect before showing content
+            }, 3000); // 6 seconds for the initial animation
+        });
+    </script>
+
     <!--footer-->
     <script>
         const words = ['Developer', 'Designer'];
@@ -510,30 +1018,30 @@
             setInterval(updateWord, 1500);
         }
         displayWords();
-    </script> 
+    </script>
     <script>
         // skills javascript
         let currentIndex = 0;
         const skillsContainer = document.querySelector('.skills-container');
         const skillCards = document.querySelectorAll('.skill-card');
-        
+
         function openModal(skillId) {
             const skillContent = document.querySelector(`#${skillId} .skill-content`).innerHTML;
             document.getElementById('modal-skill-content').innerHTML = skillContent;
             document.getElementById('modal').style.display = 'block';
         }
-        
+
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
         }
-        
+
         function slideLeft() {
             if (currentIndex > 0) {
                 currentIndex--;
                 skillsContainer.style.transform = `translateX(-${currentIndex * (skillCards[0].clientWidth + 40)}px)`;
             }
         }
-        
+
         function slideRight() {
             const visibleCards = Math.floor(document.querySelector('.skills-wrapper').clientWidth / (skillCards[0].clientWidth + 40));
             if (currentIndex < skillCards.length - visibleCards) {
@@ -541,28 +1049,143 @@
                 skillsContainer.style.transform = `translateX(-${currentIndex * (skillCards[0].clientWidth + 40)}px)`;
             }
         }
-        
+
         // Close the modal when the user clicks anywhere outside of it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('modal');
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
-        
-            </script>
-            <script>
-                function openProjectModal(projectId) {
-    const modal = document.getElementById('projectModal');
-    const modalContent = document.getElementById('modal-project-content');
-    modal.style.display = 'block';
 
-    // Add project details
-    let projectDetails = '';
+    </script>
+    <script>
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modal-project-content');
+            modal.style.display = 'block';
 
-    switch (projectId) {
-        case 'project1':
-    projectDetails = `
+            // Add project details
+            let projectDetails = '';
+
+            switch (projectId) {
+                case 'project0':
+                    projectDetails = `
+        <h4 style="color: black;text-align:center;">ResolveX - Complaint Management System (Web Application)</h4>
+        <ul class="accordion-content">
+            <li>
+                <strong>Project Overview:</strong>
+                <ul>
+                    <li>ResolveX is a comprehensive web application designed to streamline and manage complaints across various sectors. It offers a modular structure with four key modules: <strong>User</strong>, <strong>Admin</strong>, <strong>Department</strong>, and <strong>Employee</strong>. The system facilitates seamless complaint lodging, tracking, and resolution while ensuring user validation and secure processes.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Features:</strong>
+                <ul>
+                    <li>
+                        <strong>User Module:</strong>
+                        <ul>
+                            <li>User Registration with email validation and OTP verification.</li>
+                            <li>Profile Management: Users can update their profile information.</li>
+                            <li>Complaint Lodging: Users can submit complaints via a user-friendly form.</li>
+                            <li>Complaint Tracking: Monitor the status and progress of complaints in real-time.</li>
+                            <li>OTP-Based Complaint Closure for secure resolution verification.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Admin Module:</strong>
+                        <ul>
+                            <li>Dashboard: Real-time stats for complaints, departments, and employees.</li>
+                            <li>Complaint Management: Assign and update complaints lodged by users.</li>
+                            <li>Manage departments and employees within the system.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Department Module:</strong>
+                        <ul>
+                            <li>Complaint Assignment: Departments assign complaints to employees based on their expertise.</li>
+                            <li>Performance Monitoring: Departments can monitor employee performance and track complaint statuses.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Employee Module:</strong>
+                        <ul>
+                            <li>Complaint Handling: Employees resolve complaints assigned to them.</li>
+                            <li>OTP-based verification ensures secure complaint resolution confirmation.</li>
+                            <li>Profile Management: Employees can update their profile information.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Technologies Used:</strong>
+                <ul>
+                    <li>Backend: Java (JSP/Servlets)</li>
+                    <li>Frontend: HTML, CSS, JavaScript, Bootstrap, FontAwesome</li>
+                    <li>Database: MySQL</li>
+                    <li>Version Control: Git</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Modular System: Separate responsibilities across users, admins, departments, and employees for efficient management.</li>
+                    <li>User-Centric Design: Easy-to-use interface for complaint lodging, tracking, and resolution.</li>
+                    <li>OTP Verification for secure complaint closure.</li>
+                    <li>Admin Control: Full system control via the dashboard for complaint management and statistical insights.</li>
+                    <li>Department Efficiency: Structured workflows for task assignment and performance monitoring.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Installation and Setup:</strong>
+                <ul>
+                    <li><strong>Clone the Repository:</strong></li>
+                    <pre><code>git clone https://github.com/yourusername/resolveX-complaint-management-system.git</code></pre>
+                    <li><strong>Configure Database:</strong> Import the SQL script to set up the MySQL database and update connection details in the <code>dbconfig.properties</code>.</li>
+                    <li><strong>Build and Deploy:</strong> Use Maven to build and deploy the project on a Tomcat server, accessible at <code>http://localhost:8080/ResolveX</code>.</li>
+                    <li><strong>Admin Setup:</strong> Log in with the default admin credentials to set up departments and employees.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Future Enhancements:</strong>
+                <ul>
+                    <li>Mobile Responsiveness: Enhance the UI for better mobile compatibility.</li>
+                    <li>Role-Based Access Control for more granular permissions.</li>
+                    <li>Notification System: Email/SMS updates for complaint status changes.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>GitHub Project Link:</strong>
+                <ul>
+                    <li><a href="https://github.com/yourusername/resolveX-complaint-management-system" target="_blank">Click here</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Contributing:</strong>
+                <ul>
+                    <li>We welcome contributions! Please see our <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for details.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>License:</strong>
+                <ul>
+                    <li>This project is licensed under the MIT License. See the <a href="LICENSE" target="_blank">LICENSE</a> file for details.</li>
+                </ul>
+            </li>
+        </ul>
+    `;
+                    break;
+
+                case 'project1':
+                    projectDetails = `
         <h4 style="color: black;text-align:center;">Vendor Management System</h4>
         <ul>
             <li>
@@ -695,10 +1318,10 @@
             </li>
         </ul>
     `;
-    break;
+                    break;
 
-        case 'project2':
-            projectDetails = `
+                case 'project2':
+                    projectDetails = `
                 <h4 style="color: black;text-align:center;">Women Security App</h4>
                  <ul>
                             <li>
@@ -842,9 +1465,9 @@
                             </li>
                         </ul>
             `;
-            break;
-        case 'project3':
-            projectDetails = `
+                    break;
+                case 'project3':
+                    projectDetails = `
                 <h4 style="color: black;text-align:center;">Voter Id Application</h4>
                  <ul class="accordion-content">
                             <li>
@@ -931,9 +1554,9 @@
                             </li>
                         </ul>
             `;
-            break;
-        case 'project4':
-            projectDetails = `
+                    break;
+                case 'project4':
+                    projectDetails = `
                 <h4 style="color: black;text-align:center;">Simple Calculator</h4>
                 <ul class="accordion-content">
                             <li>
@@ -966,9 +1589,9 @@
                             </li>
                         </ul>
             `;
-            break;
-        case 'project5':
-            projectDetails = `
+                    break;
+                case 'project5':
+                    projectDetails = `
                 <h4 style="color: black;text-align:center;">Register-Login project:</h4>
                  <ul>
                             <li>
@@ -1022,66 +1645,69 @@
                             </li>
                         </ul>
             `;
-            break;
-    }
+                    break;
+            }
 
-    modalContent.innerHTML = projectDetails;
-}
+            modalContent.innerHTML = projectDetails;
+        }
 
-function closeProjectModal() {
-    const modal = document.getElementById('projectModal');
-    modal.style.display = 'none';
-}
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+        }
 
-// Close modal if clicking outside of it
-window.onclick = function(event) {
-    const modal = document.getElementById('projectModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-}
+        // Close modal if clicking outside of it
+        window.onclick = function (event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
 
-            </script>
-    
+    </script>
+
 
     <!-- <script src="scripts.js"></script> -->
     <script>
         function validateForm() {
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const contactNumber = document.getElementById("contactNumber").value;
-          const message = document.getElementById("message").value;
-      
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          const contactNumberPattern = /^\d{10}$/;
-      
-          if (name.trim() === "") {
-            alert("Name is required.");
-            return false;
-          }
-      
-          if (!emailPattern.test(email)) {
-            alert("Please enter a valid email address.");
-            return false;
-          }
-      
-          if (!contactNumberPattern.test(contactNumber)) {
-            alert("Please enter a valid 10-digit contact number.");
-            return false;
-          }
-      
-          if (message.trim() === "") {
-            alert("Message is required.");
-            return false;
-          }
-      
-          return true;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const contactNumber = document.getElementById("contactNumber").value;
+            const message = document.getElementById("message").value;
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const contactNumberPattern = /^\d{10}$/;
+
+            if (name.trim() === "") {
+                alert("Name is required.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (!contactNumberPattern.test(contactNumber)) {
+                alert("Please enter a valid 10-digit contact number.");
+                return false;
+            }
+
+            if (message.trim() === "") {
+                alert("Message is required.");
+                return false;
+            }
+
+            return true;
         }
-      </script>
-      
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
 </html>
