@@ -203,5 +203,73 @@ a:hover .bi-github {
     background-color: #333; /* GitHub dark color */
     color: white; /* White icon on dark background */
 }
+.bi-youtube{
+    color:yellow;
+}
+a:hover .bi-youtube {
+    border-radius: 95%;
+    background-color:red; /* GitHub dark color */
+    color: yellow; /* White icon on dark background */
+}
+/* Tooltip styling */
+a[data-tooltip] {
+    position: relative;
+}
 
+a[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 150%; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+a[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.75) transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/* Show tooltip on hover */
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    color: yellow;
+}
+
+/* Light hover effect for icons */
+a.github-link:hover i,
+a.external-link:hover i {
+    color: #ffc
+    
+
+}
+.project.hidden {
+    display: none !important;
+}
+
+  
+  #show-more {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
 

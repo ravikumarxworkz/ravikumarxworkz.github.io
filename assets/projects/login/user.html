@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/kMVqz2bM6S7HaUgiA+BcTPEJQJG5wrpuLIm0hJ0lwTEYZcijyQql7NZGR7zpO8Ufx+MDg/D4r2qCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="user.css">
+</head>
+<body>
+  <img src="Tech_In_JavaFullStack.webp" alt="ResolveX Logo" id="logo" style="width: 120px;">
+  <div id="dashboard" class="dashboard">
+    <h2><i class="fas fa-user-circle"></i> Welcome, <span id="user-name"></span></h2>
+    <div class="user-info">
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <span id="user-email"></span></p>
+      <p><i class="fas fa-phone"></i> <strong>Contact Number:</strong> <span id="user-number"></span></p>
+      <button id="edit-btn" class="edit-btn"><i class="fas fa-edit"></i> Edit Profile</button>
+    </div>
+    <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+
+  <!-- Modal for editing profile -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <h3>Edit Profile</h3>
+      <input type="text" id="edit-username" placeholder="Edit your name">
+      <input type="text" id="edit-number" placeholder="Edit your contact number">
+      <button class="save" onclick="saveChanges()"><i class="fas fa-save"></i> Save Changes</button>
+      <button class="cancel" onclick="closeModal()"><i class="fas fa-times"></i> Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const userNameSpan = document.getElementById('user-name');
+    const userEmailSpan = document.getElementById('user-email');
+    const userNumberSpan = document.getElementById('user-number');
+    const editModal = document.getElementById('edit-modal');
+    const editUsername = document.getElementById('edit-username');
+    const editNumber = document.getElementById('edit-number');
+
+    // Display user info from sessionStorage
+    const activeUser = JSON.parse(sessionStorage.getItem('activeUser'));
+    if (activeUser) {
+      userNameSpan.textContent = activeUser.username;
+      userEmailSpan.textContent = activeUser.email;
+      userNumberSpan.textContent = activeUser.number;
+    }
+
+    // Edit button click event to open modal
+    document.getElementById('edit-btn').addEventListener('click', () => {
+      // Populate modal with current user data
+      editUsername.value = activeUser.username;
+      editNumber.value = activeUser.number;
+      editModal.style.display = 'flex';
+    });
+
+    // Save the changes from modal
+    function saveChanges() {
+      const newUsername = editUsername.value;
+      const newNumber = editNumber.value;
+
+      // Get the active user from sessionStorage
+      let activeUser = JSON.parse(sessionStorage.getItem('activeUser'));
+
+      // Update the active user's data
+      activeUser.username = newUsername;
+      activeUser.number = newNumber;
+
+      // Update sessionStorage with the new details
+      sessionStorage.setItem('activeUser', JSON.stringify(activeUser));
+
+      // Retrieve the users array from localStorage
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Find the user in the localStorage array and update their details
+      const userIndex = users.findIndex(user => user.email === activeUser.email);
+      if (userIndex !== -1) {
+        users[userIndex].username = newUsername;
+        users[userIndex].number = newNumber;
+
+        // Update localStorage with the new details
+        localStorage.setItem('users', JSON.stringify(users));
+      }
+
+      // Update the displayed user info on the profile page
+      userNameSpan.textContent = newUsername;
+      userNumberSpan.textContent = newNumber;
+
+      // Close the modal
+      editModal.style.display = 'none';
+
+      alert('Profile updated successfully!');
+    }
+
+    // Close the modal
+    function closeModal() {
+      editModal.style.display = 'none';
+    }
+
+    // Logout function
+    function logout() {
+      sessionStorage.removeItem('activeUser');
+      window.location.href = 'index.html'; // Redirect to login page
+    }
+  </script>
+</body>
+
+</html>
