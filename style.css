@@ -271,5 +271,36 @@ a.external-link:hover i {
     margin-top: 10px;
     cursor: pointer;
   }
-  
+  /* Button animation */
+.watch-btn {
+    position: relative;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+}
+
+.watch-btn:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+
 
