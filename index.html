@@ -107,19 +107,31 @@
         justify-content: center;
         align-items: center;
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 9999;
+      }
+      
+      .circle-loader::after {
+        content: "";
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 200px;
         height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       /* Image in the center */
       .circle-loader img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        z-index: 10;
         width: 150px;
         height: 150px;
         border-radius: 50%;
@@ -129,15 +141,17 @@
       .circle-loader::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 36.5%;
+        left: 43.5%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         border: 4px solid transparent;
         border-top: 4px solid #f6ff00;
         border-right: 4px solid #d9ff00;
         animation: drawCircle 3s linear forwards;
+        z-index: 11;
       }
 
       /* Glow effect on completion */
@@ -2591,18 +2605,25 @@ about-text {
         });
     
       // Function to add glow effect and hide loader to show main content
-      window.addEventListener("load", () => {
-        // Simulate a loading time of 6 seconds (matches the CSS animation)
+      document.addEventListener("DOMContentLoaded", () => {
+        // Ensure loader is visible initially
+        const loader = document.getElementById("loader");
+        const mainPage = document.getElementById("main-page");
+        
+        // Show loader and hide main content on page load
+        loader.style.display = "flex";
+        mainPage.classList.remove("show-content");
+        
+        // Simulate a loading time of 3 seconds (matches the CSS animation)
         setTimeout(() => {
-          const loader = document.getElementById("loader");
           loader.classList.add("glow"); // Add glow effect
 
           // After glow effect, show main content
           setTimeout(() => {
             loader.style.display = "none"; // Hide the loader
-            document.getElementById("main-page").classList.add("show-content"); // Show the main content
+            mainPage.classList.add("show-content"); // Show the main content
           }, 1000); // Wait 1 second for the glow effect before showing content
-        }, 3000); // 6 seconds for the initial animation
+        }, 3000); // 3 seconds for the initial animation + glow
       });
     </script>
 
